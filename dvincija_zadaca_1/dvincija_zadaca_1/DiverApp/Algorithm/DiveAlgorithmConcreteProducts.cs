@@ -9,7 +9,7 @@ namespace dvincija_zadaca_1.DiverApp.Algorithm
 {
     public class MaxDepthAlg : DiveAlgorithmProduct
     {
-        public override List<PairHelper> GetDivePairs(List<Diver> divers, int numOfDivers)
+        public override List<PairHelper> GetDivePairs(List<Diver> divers, DiveSchedule diveSchedule)
         {
             List<PairHelper> pairList = new List<PairHelper>();
 
@@ -18,18 +18,27 @@ namespace dvincija_zadaca_1.DiverApp.Algorithm
 
             int start = 0;
             int end = divers.Count() - 1;
+            int numOfDivers = diveSchedule.numOfDivers;
 
-            while(numOfDivers > 0)
+            while (numOfDivers > 0)
             {
                 if (numOfDivers % 2 == 0)
                 {
                     numOfDivers -= 2;
-                    pairList.Add(new PairHelper (new List<Diver>() { divers[start++], divers[end--] } ));
+                    pairList.Add(new PairHelper (new List<Diver>() { divers[start], divers[end] }, diveSchedule.maxDepth));
+
+                    divers[start++].addDive(diveSchedule);
+                    divers[end--].addDive(diveSchedule);
                 }
                 else
                 {
                     numOfDivers -= 3;
-                    pairList.Add(new PairHelper(new List<Diver>() { divers[start], divers[start + 1], divers[end--] }));
+                    pairList.Add(new PairHelper(new List<Diver>() { divers[start], divers[start + 1], divers[end] }, diveSchedule.maxDepth));
+
+                    divers[start].addDive(diveSchedule);
+                    divers[start + 1].addDive(diveSchedule);
+                    divers[end--].addDive(diveSchedule);
+
                     start += 2;
                 }
             }
@@ -39,14 +48,14 @@ namespace dvincija_zadaca_1.DiverApp.Algorithm
     }
     public class PartnerAtSameLevelAlg : DiveAlgorithmProduct
     {
-        public override List<PairHelper> GetDivePairs(List<Diver> diver, int numOfDivers)
+        public override List<PairHelper> GetDivePairs(List<Diver> diver, DiveSchedule diveSchedule)
         {
             throw new NotImplementedException();
         }
     }
     public class RandomAlg : DiveAlgorithmProduct
     {
-        public override List<PairHelper> GetDivePairs(List<Diver> diver, int numOfDivers)
+        public override List<PairHelper> GetDivePairs(List<Diver> diver, DiveSchedule diveSchedule)
         {
             throw new NotImplementedException();
         }

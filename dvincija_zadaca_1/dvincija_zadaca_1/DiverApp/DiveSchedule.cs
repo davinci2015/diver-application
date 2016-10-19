@@ -14,7 +14,7 @@ namespace dvincija_zadaca_1.DiverApp
         public int maxDepth { get; set; }
         public int numOfDivers { get; set; }
         public List<Diver> divers = new List<Diver>();
-        public List<PairHelper> diversGroup;  
+        public List<PairHelper> diveGroups;  
         
         public DiveSchedule(string date, string time, int maxDepth, int numOfDivers)
         {
@@ -36,9 +36,9 @@ namespace dvincija_zadaca_1.DiverApp
             }
         }
 
-        public void setDiveGroup(List<PairHelper> diversGroup)
+        public void setDiveGroups(List<PairHelper> diveGroups)
         {
-            this.diversGroup = diversGroup;
+            this.diveGroups = diveGroups;
         }
     }
 }

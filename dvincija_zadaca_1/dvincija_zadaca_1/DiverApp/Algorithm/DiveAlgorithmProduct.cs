@@ -9,6 +9,6 @@ namespace dvincija_zadaca_1.DiverApp.Algorithm
 {
     public abstract class DiveAlgorithmProduct
     {
-        public abstract List<PairHelper> GetDivePairs(List<Diver> diver, int numbOfDivers);
+        public abstract List<PairHelper> GetDivePairs(List<Diver> diver, DiveSchedule diveSchedule);
     }
 }

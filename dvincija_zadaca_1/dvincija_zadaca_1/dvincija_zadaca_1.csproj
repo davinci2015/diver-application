@@ -49,9 +49,11 @@
     <Compile Include="DiverApp\Algorithm\DiveAlgorithmProduct.cs" />
     <Compile Include="DiverApp\Certificate.cs" />
     <Compile Include="DiverApp\Diver.cs" />
+    <Compile Include="DiverApp\DiverApplication.cs" />
     <Compile Include="DiverApp\DiveSchedule.cs" />
     <Compile Include="DiverApp\Helpers\CertificateHelper.cs" />
     <Compile Include="DiverApp\Helpers\PairHelper.cs" />
+    <Compile Include="DiverApp\Helpers\Writer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
