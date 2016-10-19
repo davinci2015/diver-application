@@ -63,6 +63,9 @@ namespace dvincija_zadaca_1.DiverApp.Algorithm
                 end = divers.Count() - 1,
                 numOfDivers = diveSchedule.numOfDivers;
 
+            // Random sort divers array
+            divers = divers.OrderBy(x => Guid.NewGuid()).ToList();
+
             while (numOfDivers > 0)
             {
                 if (numOfDivers % 2 == 0)
