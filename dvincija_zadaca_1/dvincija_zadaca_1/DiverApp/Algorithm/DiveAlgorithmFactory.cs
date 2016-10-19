@@ -14,10 +14,12 @@ namespace dvincija_zadaca_1.DiverApp.Algorithm
             switch(type)
             {
                 case "MaxDepthAlg":
+                    Console.WriteLine("Max --------------------------------");
                     return new MaxDepthAlg();
                 case "PartnerAtSameLevelAlg":
                     return new PartnerAtSameLevelAlg();
                 case "RandomAlg":
+                    Console.WriteLine("Random --------------------------------");
                     return new RandomAlg();
                 default:
                     return new MaxDepthAlg();
