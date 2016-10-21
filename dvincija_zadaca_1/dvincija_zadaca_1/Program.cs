@@ -22,8 +22,13 @@ namespace dvincija_zadaca_1
                 string algorithmName        = args[3];
                 string outFilePath          = args[4];
 
-                DiverApplication APP = new DiverApplication(seed, diversFilePath, diveScheduleFilePath, algorithmName, outFilePath);
-                APP.Init();
+                if (seed >= 100)
+                {
+                    DiverApplication APP = new DiverApplication(seed, diversFilePath, diveScheduleFilePath, algorithmName, outFilePath);
+                    APP.Init();
+                }
+                else
+                    Console.WriteLine("Warning: seed needs to be greater than 99!");
             }
 
             Console.ReadLine();

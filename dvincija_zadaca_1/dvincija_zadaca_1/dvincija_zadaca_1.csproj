@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiverApp\Algorithm\DiveAlgorithmConcreteProducts.cs" />
+    <Compile Include="DiverApp\Algorithm\ConcreteProducts\MaxDepthAlg.cs" />
+    <Compile Include="DiverApp\Algorithm\ConcreteProducts\PartnerAtSameLevelAlg.cs" />
+    <Compile Include="DiverApp\Algorithm\ConcreteProducts\RandomAlg.cs" />
     <Compile Include="DiverApp\Algorithm\DiveAlgorithmFactory.cs" />
     <Compile Include="DiverApp\Algorithm\AlgorithmFactory.cs" />
     <Compile Include="DiverApp\Algorithm\DiveAlgorithmProduct.cs" />
@@ -51,6 +53,7 @@
     <Compile Include="DiverApp\Diver.cs" />
     <Compile Include="DiverApp\DiverApplication.cs" />
     <Compile Include="DiverApp\DiveSchedule.cs" />
+    <Compile Include="DiverApp\DivingClubSingleton.cs" />
     <Compile Include="DiverApp\Helpers\CertificateHelper.cs" />
     <Compile Include="DiverApp\Helpers\PairHelper.cs" />
     <Compile Include="DiverApp\Helpers\Writer.cs" />

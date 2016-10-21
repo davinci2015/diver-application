@@ -13,6 +13,7 @@ namespace dvincija_zadaca_1.DiverApp
         public string time { get; set; }
         public int maxDepth { get; set; }
         public int numOfDivers { get; set; }
+
         public List<Diver> divers = new List<Diver>();
         public List<PairHelper> diveGroups;  
         

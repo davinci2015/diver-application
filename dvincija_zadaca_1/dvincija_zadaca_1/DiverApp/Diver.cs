@@ -11,6 +11,7 @@ namespace dvincija_zadaca_1.DiverApp
     {
         public string name { get; set; }
         public string birthDate { get; set; }
+
         public Certificate certificate;
         public List<DiveSchedule> diveSchedule = new List<DiveSchedule>();
 

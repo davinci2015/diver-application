@@ -33,13 +33,29 @@ namespace dvincija_zadaca_1.DiverApp
         private string[] ReadFile(string path)
         {
             path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName + "\\", path);
-            string[] content = System.IO.File.ReadAllLines(path);
+            string[] content = null;
+
+            try
+            {
+                content = System.IO.File.ReadAllLines(path);
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("Warning\n{0} \nFile not found!", path);
+            }
+            
             return content;
+        }
+
+        private string GetOutFilePath(string path)
+        {
+            return Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName + "\\", path);
         }
 
         private void AddDiversToList(string[] diversRaw)
         {
             string[] diver;
+
             foreach (string d in diversRaw)
             {
                 diver = d.Split(';');
@@ -86,7 +102,7 @@ namespace dvincija_zadaca_1.DiverApp
                 {
                     diveSchedule[i].setDivers(divers, random, diveSchedule[i].numOfDivers);
                 }
-
+                
                 List<PairHelper> diveGroup = algorithm.GetDivePairs(diveSchedule[i].divers, diveSchedule[i]);
                 diveSchedule[i].setDiveGroups(diveGroup);
 
@@ -96,23 +112,26 @@ namespace dvincija_zadaca_1.DiverApp
 
         public void Init()
         {
-
             string[] diversRaw = ReadFile(diversFilePath);
             string[] scheduleRaw = ReadFile(diveScheduleFilePath);
+            outFilePath = GetOutFilePath(outFilePath);
 
-            AddDiversToList(diversRaw);
-            AddDiveSchedule(scheduleRaw);
+            if (diversRaw != null && scheduleRaw != null)
+            {
+                AddDiversToList(diversRaw);
+                AddDiveSchedule(scheduleRaw);
 
-            DiveAlgorithmFactory diveFactory = new DiveAlgorithmFactory();
-            DiveAlgorithmProduct algorithm = diveFactory.createAlgorithm(algorithmName);
+                DivingClubSingleton divingClub = DivingClubSingleton.GetInstance();
 
-            AddDiversToDiveSchedule(algorithm);
+                DiveAlgorithmFactory diveFactory = new DiveAlgorithmFactory();
+                DiveAlgorithmProduct algorithm = diveFactory.createAlgorithm(algorithmName);
 
-            Writer.WriteDiveSchedule(diveSchedule.AsEnumerable());
+                AddDiversToDiveSchedule(algorithm);
 
-            foreach (Diver diver in divers)
-                Writer.WriteDivers(diver);
-            
+                Writer.CreateFile(outFilePath);
+                Writer.WriteDiveSchedule(diveSchedule.AsEnumerable(), outFilePath);
+                Writer.WriteDivers(divers.AsEnumerable(), outFilePath);
+            }
         }
     }
 }
