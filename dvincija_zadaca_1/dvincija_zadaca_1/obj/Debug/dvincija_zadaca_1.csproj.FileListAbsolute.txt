@@ -5,8 +5,8 @@ E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca
 E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\dvincija_zadaca_1\obj\Debug\dvincija_zadaca_1.exe
 E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\dvincija_zadaca_1\obj\Debug\dvincija_zadaca_1.pdb
 E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\bin\Debug\dvincija_zadaca_1.exe.config
-E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\obj\Debug\dvincija_zadaca_1.exe
-E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\obj\Debug\dvincija_zadaca_1.pdb
 E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\bin\Debug\dvincija_zadaca_1.exe
 E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\bin\Debug\dvincija_zadaca_1.pdb
 E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\obj\Debug\dvincija_zadaca_1.csprojResolveAssemblyReference.cache
+E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\obj\Debug\dvincija_zadaca_1.exe
+E:\Faks\Diplomski\III. semestar\Uzorci dizajna\dvincija_zadaca_1\dvincija_zadaca_1\obj\Debug\dvincija_zadaca_1.pdb

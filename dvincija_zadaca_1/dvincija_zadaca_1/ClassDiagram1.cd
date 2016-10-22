@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="dvincija_zadaca_1.Program">
-    <Position X="12.5" Y="3.25" Width="1.5" />
+    <Position X="10.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
@@ -57,7 +57,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="dvincija_zadaca_1.DiverApp.Diver">
-    <Position X="9.5" Y="4.25" Width="1.5" />
+    <Position X="6.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAhAAAAAAAAAAEAAAAQAAAAAAACAA=</HashCode>
       <FileName>DiverApp\Diver.cs</FileName>
@@ -77,14 +77,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="dvincija_zadaca_1.DiverApp.DiveSchedule">
-    <Position X="6.75" Y="5.25" Width="1.5" />
+    <Position X="8.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAEAAAAAEAEAAAAAAAgAAAABAAAAQAAAAQ=</HashCode>
       <FileName>DiverApp\DiveSchedule.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="dvincija_zadaca_1.DiverApp.DivingClubSingleton">
-    <Position X="9.5" Y="1.25" Width="1.5" />
+    <Position X="9" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAABAAAAAAAQCAAAAAAAAQ=</HashCode>
       <FileName>DiverApp\DivingClubSingleton.cs</FileName>
@@ -98,14 +98,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="dvincija_zadaca_1.DiverApp.Helpers.PairHelper">
-    <Position X="9.5" Y="7" Width="1.5" />
+    <Position X="10.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAABAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DiverApp\Helpers\PairHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="dvincija_zadaca_1.DiverApp.Helpers.Writer">
-    <Position X="12.5" Y="5.5" Width="1.5" />
+    <Position X="6.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAJAAAAAAA=</HashCode>
       <FileName>DiverApp\Helpers\Writer.cs</FileName>

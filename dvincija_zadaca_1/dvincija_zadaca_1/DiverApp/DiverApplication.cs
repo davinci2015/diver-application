@@ -32,7 +32,7 @@ namespace dvincija_zadaca_1.DiverApp
 
         private string[] ReadFile(string path)
         {
-            path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName + "\\", path);
+            path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\", path);
             string[] content = null;
 
             try
@@ -49,7 +49,7 @@ namespace dvincija_zadaca_1.DiverApp
 
         private string GetOutFilePath(string path)
         {
-            return Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName + "\\", path);
+            return Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\", path);
         }
 
         private void AddDiversToList(string[] diversRaw)

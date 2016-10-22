@@ -13,6 +13,7 @@ namespace dvincija_zadaca_1.DiverApp
         private List<Diver> divers = new List<Diver>();
         private List<DiveSchedule> diveSchedule = new List<DiveSchedule>();
         private DivingClubSingleton() { }
+
         public static DivingClubSingleton GetInstance()
         {
             if (Instance != null)
