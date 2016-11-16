@@ -1,0 +1,1264 @@
+_______________________________________________________
+
+		  DIVE
+		2016.01.01
+		  10:00
+
+ Depth: 10m
+ Number of divers: 2
+
+ Group 1:
+	Heda (10m) 	- (SSI) > Advanced Open Water Diver (R4)
+	Filip (10m) 	- (BSAC) > Ocean Diver (R2)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.04.22
+		  10:00
+
+ Depth: 8m
+ Number of divers: 9
+
+ Group 1:
+	Gego (8m) 	- (NAUI) > Master Scuba Diver (R4)
+	Heda (8m) 	- (SSI) > Advanced Open Water Diver (R4)
+ Group 2:
+	Aldo (8m) 	- (NAUI) > Scuba Diver (R1)
+	Luka (8m) 	- (NAUI) > Scuba Diver (R1)
+ Group 3:
+	Mato (8m) 	- (CMAS) > One Star Diver (R2)
+	Tiho (8m) 	- (CMAS) > Two Star Diver (R3)
+	Duda (8m) 	- (BSAC) > Sports Diver (R5)
+ Group 4:
+	Tedo (8m) 	- (BSAC) > Assistant Open Water Instructor (I3)
+	Pero (8m) 	- (CMAS) > Three Star Diver (I1)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.04.22
+		  15:00
+
+ Depth: 20m
+ Number of divers: 9
+
+ Group 1:
+	Gego (20m) 	- (NAUI) > Master Scuba Diver (R4)
+	Heda (20m) 	- (SSI) > Advanced Open Water Diver (R4)
+ Group 2:
+	Aldo (20m) 	- (NAUI) > Scuba Diver (R1)
+	Luka (20m) 	- (NAUI) > Scuba Diver (R1)
+ Group 3:
+	Mato (20m) 	- (CMAS) > One Star Diver (R2)
+	Tiho (20m) 	- (CMAS) > Two Star Diver (R3)
+	Duda (20m) 	- (BSAC) > Sports Diver (R5)
+ Group 4:
+	Tedo (20m) 	- (BSAC) > Assistant Open Water Instructor (I3)
+	Pero (20m) 	- (CMAS) > Three Star Diver (I1)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.05.01
+		  11:20
+
+ Depth: 20m
+ Number of divers: 7
+
+ Group 1:
+	Hido (20m) 	- (CMAS) > Two Star Diver (R3)
+	Jasna (20m) 	- (NAUI) > Scuba Rescue Diver (R3)
+ Group 2:
+	Filip (20m) 	- (BSAC) > Ocean Diver (R2)
+	Mato (20m) 	- (CMAS) > One Star Diver (R2)
+ Group 3:
+	Tedo (20m) 	- (BSAC) > Assistant Open Water Instructor (I3)
+	Duda (20m) 	- (BSAC) > Sports Diver (R5)
+	Luka (20m) 	- (NAUI) > Scuba Diver (R1)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.05.08
+		  10:20
+
+ Depth: 15m
+ Number of divers: 3
+
+ Group 1:
+	Mira (15m) 	- (SSI) > Advanced Adventure (R2)
+	Biba (15m) 	- (NAUI) > Advanced Scuba Diver (R2)
+	Luka (15m) 	- (NAUI) > Scuba Diver (R1)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.06.10
+		  10:30
+
+ Depth: 40m
+ Number of divers: 9
+
+ Group 1:
+	Filip (40m) 	- (BSAC) > Ocean Diver (R2)
+	Biba (40m) 	- (NAUI) > Advanced Scuba Diver (R2)
+ Group 2:
+	Jasna (40m) 	- (NAUI) > Scuba Rescue Diver (R3)
+	Hido (40m) 	- (CMAS) > Two Star Diver (R3)
+ Group 3:
+	Gego (40m) 	- (NAUI) > Master Scuba Diver (R4)
+	Nena (40m) 	- (SSI) > Advanced Open Water Diver (R4)
+	Pero (40m) 	- (CMAS) > Three Star Diver (I1)
+ Group 4:
+	Jura (20m) 	- (BSAC) > Open Water Instructor (I4)
+	Aldo (20m) 	- (NAUI) > Scuba Diver (R1)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.06.10
+		  14:30
+
+ Depth: 30m
+ Number of divers: 5
+
+ Group 1:
+	Filip (30m) 	- (BSAC) > Ocean Diver (R2)
+	Biba (30m) 	- (NAUI) > Advanced Scuba Diver (R2)
+ Group 2:
+	Jura (20m) 	- (BSAC) > Open Water Instructor (I4)
+	Aldo (20m) 	- (NAUI) > Scuba Diver (R1)
+	Jasna (20m) 	- (NAUI) > Scuba Rescue Diver (R3)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.08.11
+		  15:30
+
+ Depth: 30m
+ Number of divers: 7
+
+ Group 1:
+	Nina (30m) 	- (SSI) > Diver Stress & Rescue (R3)
+	Tiho (30m) 	- (CMAS) > Two Star Diver (R3)
+ Group 2:
+	Vesna (30m) 	- (CMAS) > One Star Diver (R2)
+	Mato (30m) 	- (CMAS) > One Star Diver (R2)
+ Group 3:
+	Goga (20m) 	- (SSI) > Dive Control Specialist (I3)
+	Luka (20m) 	- (NAUI) > Scuba Diver (R1)
+	Heda (20m) 	- (SSI) > Advanced Open Water Diver (R4)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.08.11
+		  10:00
+
+ Depth: 33m
+ Number of divers: 5
+
+ Group 1:
+	Vesna (20m) 	- (CMAS) > One Star Diver (R2)
+	Luka (20m) 	- (NAUI) > Scuba Diver (R1)
+	Heda (20m) 	- (SSI) > Advanced Open Water Diver (R4)
+ Group 2:
+	Goga (33m) 	- (SSI) > Dive Control Specialist (I3)
+	Nina (33m) 	- (SSI) > Diver Stress & Rescue (R3)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.08.12
+		  10:20
+
+ Depth: 38m
+ Number of divers: 8
+
+ Group 1:
+	Nena (38m) 	- (SSI) > Advanced Open Water Diver (R4)
+	Gego (38m) 	- (NAUI) > Master Scuba Diver (R4)
+ Group 2:
+	Tiho (38m) 	- (CMAS) > Two Star Diver (R3)
+	Nina (38m) 	- (SSI) > Diver Stress & Rescue (R3)
+ Group 3:
+	Biba (38m) 	- (NAUI) > Advanced Scuba Diver (R2)
+	Filip (38m) 	- (BSAC) > Ocean Diver (R2)
+ Group 4:
+	Luka (20m) 	- (NAUI) > Scuba Diver (R1)
+	Tedo (20m) 	- (BSAC) > Assistant Open Water Instructor (I3)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.08.12
+		  15:00
+
+ Depth: 25m
+ Number of divers: 7
+
+ Group 1:
+	Nena (25m) 	- (SSI) > Advanced Open Water Diver (R4)
+	Gego (25m) 	- (NAUI) > Master Scuba Diver (R4)
+ Group 2:
+	Tiho (25m) 	- (CMAS) > Two Star Diver (R3)
+	Nina (25m) 	- (SSI) > Diver Stress & Rescue (R3)
+ Group 3:
+	Luka (20m) 	- (NAUI) > Scuba Diver (R1)
+	Biba (20m) 	- (NAUI) > Advanced Scuba Diver (R2)
+	Tedo (20m) 	- (BSAC) > Assistant Open Water Instructor (I3)
+
+_______________________________________________________
+
+
+_______________________________________________________
+
+		  DIVE
+		2016.08.12
+		  22:00
+
+ Depth: 10m
+ Number of divers: 6
+
+ Group 1:
+	Nena (10m) 	- (SSI) > Advanced Open Water Diver (R4)
+	Gego (10m) 	- (NAUI) > Master Scuba Diver (R4)
+ Group 2:
+	Tiho (10m) 	- (CMAS) > Two Star Diver (R3)
+	Nina (10m) 	- (SSI) > Diver Stress & Rescue (R3)
+ Group 3:
+	Luka (10m) 	- (NAUI) > Scuba Diver (R1)
+	Tedo (10m) 	- (BSAC) > Assistant Open Water Instructor (I3)
+
+_______________________________________________________
+
+
+
+
+_______________________________________________________
+ (CMAS) Three Star Diver - I1
+
+		Pero
+		1980
+
+
+
+ 1. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 8m
+ Group:
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+	Pero - (CMAS) > Three Star Diver (I1)
+
+
+
+ 2. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+	Pero - (CMAS) > Three Star Diver (I1)
+
+
+
+ 3. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 40m
+ Group:
+	Gego - (NAUI) > Master Scuba Diver (R4)
+	Nena - (SSI) > Advanced Open Water Diver (R4)
+	Pero - (CMAS) > Three Star Diver (I1)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (SSI) Advanced Adventure - R2
+
+		Ivo
+		1981
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (CMAS) One Star Diver - R2
+
+		Mato
+		1982
+
+
+
+ 1. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 8m
+ Group:
+	Mato - (CMAS) > One Star Diver (R2)
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Duda - (BSAC) > Sports Diver (R5)
+
+
+
+ 2. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Mato - (CMAS) > One Star Diver (R2)
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Duda - (BSAC) > Sports Diver (R5)
+
+
+
+ 3. DIVE
+ 2016.05.01
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Filip - (BSAC) > Ocean Diver (R2)
+	Mato - (CMAS) > One Star Diver (R2)
+
+
+
+ 4. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 30m
+ Group:
+	Vesna - (CMAS) > One Star Diver (R2)
+	Mato - (CMAS) > One Star Diver (R2)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (NAUI) Scuba Diver - R1
+
+		Luka
+		1981
+
+
+
+ 1. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 8m
+ Group:
+	Aldo - (NAUI) > Scuba Diver (R1)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+
+
+ 2. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Aldo - (NAUI) > Scuba Diver (R1)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+
+
+ 3. DIVE
+ 2016.05.01
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+	Duda - (BSAC) > Sports Diver (R5)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+
+
+ 4. DIVE
+ 2016.05.08
+ -----------------
+ Max. dive depth 15m
+ Group:
+	Mira - (SSI) > Advanced Adventure (R2)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+
+
+ 5. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Goga - (SSI) > Dive Control Specialist (I3)
+	Luka - (NAUI) > Scuba Diver (R1)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+
+
+ 6. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Vesna - (CMAS) > One Star Diver (R2)
+	Luka - (NAUI) > Scuba Diver (R1)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+
+
+ 7. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Luka - (NAUI) > Scuba Diver (R1)
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+
+
+
+ 8. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Luka - (NAUI) > Scuba Diver (R1)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+
+
+
+ 9. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 10m
+ Group:
+	Luka - (NAUI) > Scuba Diver (R1)
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (SSI) Diver Stress & Rescue - R3
+
+		Nina
+		1984
+
+
+
+ 1. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 30m
+ Group:
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+	Tiho - (CMAS) > Two Star Diver (R3)
+
+
+
+ 2. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 33m
+ Group:
+	Goga - (SSI) > Dive Control Specialist (I3)
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+
+
+
+ 3. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 38m
+ Group:
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+
+
+
+ 4. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 25m
+ Group:
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+
+
+
+ 5. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 10m
+ Group:
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (BSAC) Ocean Diver - R2
+
+		Filip
+		1989
+
+
+
+ 1. DIVE
+ 2016.01.01
+ -----------------
+ Max. dive depth 10m
+ Group:
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+	Filip - (BSAC) > Ocean Diver (R2)
+
+
+
+ 2. DIVE
+ 2016.05.01
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Filip - (BSAC) > Ocean Diver (R2)
+	Mato - (CMAS) > One Star Diver (R2)
+
+
+
+ 3. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 40m
+ Group:
+	Filip - (BSAC) > Ocean Diver (R2)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+
+
+
+ 4. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 30m
+ Group:
+	Filip - (BSAC) > Ocean Diver (R2)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+
+
+
+ 5. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 38m
+ Group:
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+	Filip - (BSAC) > Ocean Diver (R2)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (BSAC) Sports Diver - R5
+
+		Duda
+		1992
+
+
+
+ 1. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 8m
+ Group:
+	Mato - (CMAS) > One Star Diver (R2)
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Duda - (BSAC) > Sports Diver (R5)
+
+
+
+ 2. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Mato - (CMAS) > One Star Diver (R2)
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Duda - (BSAC) > Sports Diver (R5)
+
+
+
+ 3. DIVE
+ 2016.05.01
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+	Duda - (BSAC) > Sports Diver (R5)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (BSAC) Open Water Instructor - I4
+
+		Jura
+		1977
+
+
+
+ 1. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Jura - (BSAC) > Open Water Instructor (I4)
+	Aldo - (NAUI) > Scuba Diver (R1)
+
+
+
+ 2. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Jura - (BSAC) > Open Water Instructor (I4)
+	Aldo - (NAUI) > Scuba Diver (R1)
+	Jasna - (NAUI) > Scuba Rescue Diver (R3)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (NAUI) Scuba Rescue Diver - R3
+
+		Jasna
+		1978
+
+
+
+ 1. DIVE
+ 2016.05.01
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Hido - (CMAS) > Two Star Diver (R3)
+	Jasna - (NAUI) > Scuba Rescue Diver (R3)
+
+
+
+ 2. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 40m
+ Group:
+	Jasna - (NAUI) > Scuba Rescue Diver (R3)
+	Hido - (CMAS) > Two Star Diver (R3)
+
+
+
+ 3. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Jura - (BSAC) > Open Water Instructor (I4)
+	Aldo - (NAUI) > Scuba Diver (R1)
+	Jasna - (NAUI) > Scuba Rescue Diver (R3)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (NAUI) Advanced Scuba Diver - R2
+
+		Biba
+		1993
+
+
+
+ 1. DIVE
+ 2016.05.08
+ -----------------
+ Max. dive depth 15m
+ Group:
+	Mira - (SSI) > Advanced Adventure (R2)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+
+
+ 2. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 40m
+ Group:
+	Filip - (BSAC) > Ocean Diver (R2)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+
+
+
+ 3. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 30m
+ Group:
+	Filip - (BSAC) > Ocean Diver (R2)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+
+
+
+ 4. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 38m
+ Group:
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+	Filip - (BSAC) > Ocean Diver (R2)
+
+
+
+ 5. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Luka - (NAUI) > Scuba Diver (R1)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (CMAS) One Star Diver - R2
+
+		Vesna
+		1997
+
+
+
+ 1. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 30m
+ Group:
+	Vesna - (CMAS) > One Star Diver (R2)
+	Mato - (CMAS) > One Star Diver (R2)
+
+
+
+ 2. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Vesna - (CMAS) > One Star Diver (R2)
+	Luka - (NAUI) > Scuba Diver (R1)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (CMAS) Two Star Diver - R3
+
+		Tiho
+		1984
+
+
+
+ 1. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 8m
+ Group:
+	Mato - (CMAS) > One Star Diver (R2)
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Duda - (BSAC) > Sports Diver (R5)
+
+
+
+ 2. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Mato - (CMAS) > One Star Diver (R2)
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Duda - (BSAC) > Sports Diver (R5)
+
+
+
+ 3. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 30m
+ Group:
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+	Tiho - (CMAS) > Two Star Diver (R3)
+
+
+
+ 4. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 38m
+ Group:
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+
+
+
+ 5. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 25m
+ Group:
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+
+
+
+ 6. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 10m
+ Group:
+	Tiho - (CMAS) > Two Star Diver (R3)
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (SSI) Advanced Open Water Diver - R4
+
+		Nena
+		1989
+
+
+
+ 1. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 40m
+ Group:
+	Gego - (NAUI) > Master Scuba Diver (R4)
+	Nena - (SSI) > Advanced Open Water Diver (R4)
+	Pero - (CMAS) > Three Star Diver (I1)
+
+
+
+ 2. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 38m
+ Group:
+	Nena - (SSI) > Advanced Open Water Diver (R4)
+	Gego - (NAUI) > Master Scuba Diver (R4)
+
+
+
+ 3. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 25m
+ Group:
+	Nena - (SSI) > Advanced Open Water Diver (R4)
+	Gego - (NAUI) > Master Scuba Diver (R4)
+
+
+
+ 4. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 10m
+ Group:
+	Nena - (SSI) > Advanced Open Water Diver (R4)
+	Gego - (NAUI) > Master Scuba Diver (R4)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (SSI) Advanced Adventure - R2
+
+		Mira
+		1993
+
+
+
+ 1. DIVE
+ 2016.05.08
+ -----------------
+ Max. dive depth 15m
+ Group:
+	Mira - (SSI) > Advanced Adventure (R2)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (NAUI) Master Scuba Diver - R4
+
+		Gego
+		1989
+
+
+
+ 1. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 8m
+ Group:
+	Gego - (NAUI) > Master Scuba Diver (R4)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+
+
+ 2. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Gego - (NAUI) > Master Scuba Diver (R4)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+
+
+ 3. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 40m
+ Group:
+	Gego - (NAUI) > Master Scuba Diver (R4)
+	Nena - (SSI) > Advanced Open Water Diver (R4)
+	Pero - (CMAS) > Three Star Diver (I1)
+
+
+
+ 4. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 38m
+ Group:
+	Nena - (SSI) > Advanced Open Water Diver (R4)
+	Gego - (NAUI) > Master Scuba Diver (R4)
+
+
+
+ 5. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 25m
+ Group:
+	Nena - (SSI) > Advanced Open Water Diver (R4)
+	Gego - (NAUI) > Master Scuba Diver (R4)
+
+
+
+ 6. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 10m
+ Group:
+	Nena - (SSI) > Advanced Open Water Diver (R4)
+	Gego - (NAUI) > Master Scuba Diver (R4)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (SSI) Dive Control Specialist - I3
+
+		Goga
+		1987
+
+
+
+ 1. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Goga - (SSI) > Dive Control Specialist (I3)
+	Luka - (NAUI) > Scuba Diver (R1)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+
+
+ 2. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 33m
+ Group:
+	Goga - (SSI) > Dive Control Specialist (I3)
+	Nina - (SSI) > Diver Stress & Rescue (R3)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (CMAS) Two Star Diver - R3
+
+		Hido
+		1979
+
+
+
+ 1. DIVE
+ 2016.05.01
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Hido - (CMAS) > Two Star Diver (R3)
+	Jasna - (NAUI) > Scuba Rescue Diver (R3)
+
+
+
+ 2. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 40m
+ Group:
+	Jasna - (NAUI) > Scuba Rescue Diver (R3)
+	Hido - (CMAS) > Two Star Diver (R3)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (NAUI) Scuba Diver - R1
+
+		Aldo
+		1990
+
+
+
+ 1. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 8m
+ Group:
+	Aldo - (NAUI) > Scuba Diver (R1)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+
+
+ 2. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Aldo - (NAUI) > Scuba Diver (R1)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+
+
+ 3. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Jura - (BSAC) > Open Water Instructor (I4)
+	Aldo - (NAUI) > Scuba Diver (R1)
+
+
+
+ 4. DIVE
+ 2016.06.10
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Jura - (BSAC) > Open Water Instructor (I4)
+	Aldo - (NAUI) > Scuba Diver (R1)
+	Jasna - (NAUI) > Scuba Rescue Diver (R3)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (SSI) Advanced Open Water Diver - R4
+
+		Heda
+		1988
+
+
+
+ 1. DIVE
+ 2016.01.01
+ -----------------
+ Max. dive depth 10m
+ Group:
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+	Filip - (BSAC) > Ocean Diver (R2)
+
+
+
+ 2. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 8m
+ Group:
+	Gego - (NAUI) > Master Scuba Diver (R4)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+
+
+ 3. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Gego - (NAUI) > Master Scuba Diver (R4)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+
+
+ 4. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Goga - (SSI) > Dive Control Specialist (I3)
+	Luka - (NAUI) > Scuba Diver (R1)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+
+
+ 5. DIVE
+ 2016.08.11
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Vesna - (CMAS) > One Star Diver (R2)
+	Luka - (NAUI) > Scuba Diver (R1)
+	Heda - (SSI) > Advanced Open Water Diver (R4)
+
+_______________________________________________________
+
+
+
+_______________________________________________________
+ (BSAC) Assistant Open Water Instructor - I3
+
+		Tedo
+		1983
+
+
+
+ 1. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 8m
+ Group:
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+	Pero - (CMAS) > Three Star Diver (I1)
+
+
+
+ 2. DIVE
+ 2016.04.22
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+	Pero - (CMAS) > Three Star Diver (I1)
+
+
+
+ 3. DIVE
+ 2016.05.01
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+	Duda - (BSAC) > Sports Diver (R5)
+	Luka - (NAUI) > Scuba Diver (R1)
+
+
+
+ 4. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Luka - (NAUI) > Scuba Diver (R1)
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+
+
+
+ 5. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 20m
+ Group:
+	Luka - (NAUI) > Scuba Diver (R1)
+	Biba - (NAUI) > Advanced Scuba Diver (R2)
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+
+
+
+ 6. DIVE
+ 2016.08.12
+ -----------------
+ Max. dive depth 10m
+ Group:
+	Luka - (NAUI) > Scuba Diver (R1)
+	Tedo - (BSAC) > Assistant Open Water Instructor (I3)
+
+_______________________________________________________
+
