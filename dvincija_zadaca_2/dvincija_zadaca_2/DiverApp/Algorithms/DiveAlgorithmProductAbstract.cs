@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dvincija_zadaca_1.DiverApp.Algorithm
+namespace dvincija_zadaca_1.DiverApp.Algorithms
 {
-    public abstract class DiveAlgorithmProduct
+    public abstract class DiveAlgorithmProductAbstract
     {
         public abstract List<PairHelper> GetDivePairs(List<Diver> diver, DiveSchedule diveSchedule);
     }

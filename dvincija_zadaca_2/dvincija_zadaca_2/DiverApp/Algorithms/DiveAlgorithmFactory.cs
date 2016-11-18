@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using dvincija_zadaca_1.DiverApp.Algorithm.ConcreteProducts;
+using dvincija_zadaca_1.DiverApp.Algorithms.ConcreteProducts;
 
-namespace dvincija_zadaca_1.DiverApp.Algorithm
+namespace dvincija_zadaca_1.DiverApp.Algorithms
 {
-    public class DiveAlgorithmFactory : AlgorithmFactory
+    public class DiveAlgorithmFactory : AlgorithmFactoryAbstract
     {
-        public override DiveAlgorithmProduct createAlgorithm(string type)
+        public override DiveAlgorithmProductAbstract createAlgorithm(string type)
         {
             switch(type)
             {

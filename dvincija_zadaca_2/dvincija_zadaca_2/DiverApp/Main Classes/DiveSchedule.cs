@@ -34,9 +34,7 @@ namespace dvincija_zadaca_1.DiverApp
             var randomNumbers = Enumerable.Range(0, divers.Count()).OrderBy(x => random.Next()).Take(numOfDiversToGenerate).ToList();
 
             for (int i = 0; i < numOfDiversToGenerate; i++)
-            {
                 this.divers.Add(divers[randomNumbers[i]]);
-            }
         }
 
         public void setDiveGroups(List<PairHelper> diveGroups)

@@ -1,4 +1,4 @@
-﻿using dvincija_zadaca_1.DiverApp.Algorithm;
+﻿using dvincija_zadaca_1.DiverApp.Algorithms;
 using dvincija_zadaca_1.DiverApp.Helpers;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,9 @@ namespace dvincija_zadaca_1.DiverApp
 
         List<Diver> divers = new List<Diver>();
         List<DiveSchedule> diveSchedule = new List<DiveSchedule>();
+        Dictionary<string, Federation> federations = new Dictionary<string, Federation>();
         CertificateHelper certHelper = new CertificateHelper();
+        DivingClubSingleton divingClub = DivingClubSingleton.GetInstance();
 
         public DiverApplication(int seed, string diversFilePath, string diveScheduleFilePath, string[] algorithms, string outFilePath)
         {
@@ -37,12 +39,33 @@ namespace dvincija_zadaca_1.DiverApp
         private void AddDiversToList(string[] diversRaw)
         {
             string[] diver;
+            string name;
+            string birthDate;
+            string federationName;
+            string level;
 
             foreach (string d in diversRaw)
             {
                 diver = d.Split(';');
-                Certificate cert = new Certificate(diver[1], certHelper.getCertificateName(diver[1], diver[2]), diver[2], certHelper.setDepthDeterminedByCertificate(diver[2]));
-                divers.Add(new Diver(diver[0], diver[3], cert));
+
+                name            = diver[0];
+                federationName  = diver[1];
+                level           = diver[2];
+                birthDate       = diver[3];  
+
+                // If federation doesn't exist in dictionary then create it 
+                if (!federations.ContainsKey(federationName))
+                {
+                    // Add federation to federations list
+                    federations.Add(federationName, new Federation(federationName));
+
+                    // Add federation as observer 
+                    divingClub.addObserver(federations[federationName]);
+                }
+                   
+
+                Certificate cert = new Certificate(federationName, certHelper.getCertificateName(federationName, level), level, certHelper.getDepthDeterminedByCertificate(level));
+                divers.Add(new Diver(name, birthDate, cert, federationName));
             }
         }
 
@@ -103,7 +126,7 @@ namespace dvincija_zadaca_1.DiverApp
         /// <param name="algorithms">Array of algorithm names</param>
         private void TestAlgorithms(string[] algorithms)
         {
-            AlgorithmFactory diveFactory = new DiveAlgorithmFactory();
+            AlgorithmFactoryAbstract diveFactory = new DiveAlgorithmFactory();
 
             // We'll save generated diver groups into dictionary with algorithm name as key
             Dictionary<String, List<PairHelper>> diverGroupsByAlgorithm = new Dictionary<string, List<PairHelper>>();
@@ -121,7 +144,7 @@ namespace dvincija_zadaca_1.DiverApp
 
                 foreach(string algorithm in algorithms)
                 {
-                    DiveAlgorithmProduct currentAlgorithm = diveFactory.createAlgorithm(algorithm);
+                    DiveAlgorithmProductAbstract currentAlgorithm = diveFactory.createAlgorithm(algorithm);
 
                     // Generate dive groups with passed algorithm
                     List<PairHelper> diveGroup = currentAlgorithm.GetDivePairs(diveSchedule[i].divers, diveSchedule[i]);
@@ -145,11 +168,16 @@ namespace dvincija_zadaca_1.DiverApp
 
                 // Add safety measure to dive
                 diveSchedule[i].safetyMeasure = safetyMeasureMax;
-
-                Console.WriteLine(safetyMeasureMax);
-
+              
                 // Add used algorithm name to dive
                 diveSchedule[i].algorithmName = chosenAlgorithmName;
+
+                // Add dive to each diver
+                foreach (Diver d in diveSchedule[i].divers)
+                    d.addDive(diveSchedule[i]);
+
+                // Add dive to dive club
+                divingClub.setDive(diveSchedule[i]);
 
                 // Clear dictionary with dive groups because it needs to be empty for next iteration
                 diverGroupsByAlgorithm.Clear();
@@ -167,14 +195,11 @@ namespace dvincija_zadaca_1.DiverApp
                 AddDiveSchedule(scheduleRaw);
                 AddDiversToDiveSchedule();
                 TestAlgorithms(algorithms);
-
-                DivingClubSingleton divingClub = DivingClubSingleton.GetInstance();
-
-                /*
+                
                 Writer.CreateFile(outFilePath);
-                Writer.WriteDiveSchedule(diveSchedule.AsEnumerable(), outFilePath);
+                Writer.WriteSafetyMeasuresForDive(diveSchedule.AsEnumerable(), outFilePath);
                 Writer.WriteDivers(divers.AsEnumerable(), outFilePath);
-                */
+                Writer.StatisticsForFederation(federations, outFilePath);
             }
         }
     }

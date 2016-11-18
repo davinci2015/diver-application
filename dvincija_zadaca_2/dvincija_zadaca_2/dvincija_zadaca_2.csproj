@@ -43,22 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiverApp\Algorithm\ConcreteProducts\MaxDepthAlg.cs" />
-    <Compile Include="DiverApp\Algorithm\ConcreteProducts\PartnerAtSameLevelAlg.cs" />
-    <Compile Include="DiverApp\Algorithm\ConcreteProducts\RandomAlg.cs" />
-    <Compile Include="DiverApp\Algorithm\DiveAlgorithmFactory.cs" />
-    <Compile Include="DiverApp\Algorithm\AlgorithmFactory.cs" />
-    <Compile Include="DiverApp\Algorithm\DiveAlgorithmProduct.cs" />
-    <Compile Include="DiverApp\Certificate.cs" />
-    <Compile Include="DiverApp\Diver.cs" />
+    <Compile Include="DiverApp\Algorithms\ConcreteProducts\MaxDepthAlg.cs" />
+    <Compile Include="DiverApp\Algorithms\ConcreteProducts\PartnerAtSameLevelAlg.cs" />
+    <Compile Include="DiverApp\Algorithms\ConcreteProducts\RandomAlg.cs" />
+    <Compile Include="DiverApp\Algorithms\DiveAlgorithmFactory.cs" />
+    <Compile Include="DiverApp\Algorithms\AlgorithmFactoryAbstract.cs" />
+    <Compile Include="DiverApp\Algorithms\DiveAlgorithmProductAbstract.cs" />
+    <Compile Include="DiverApp\Main Classes\Federation.cs" />
+    <Compile Include="DiverApp\Main Classes\Certificate.cs" />
+    <Compile Include="DiverApp\Main Classes\Diver.cs" />
     <Compile Include="DiverApp\DiverApplication.cs" />
-    <Compile Include="DiverApp\DiveSchedule.cs" />
-    <Compile Include="DiverApp\DivingClubSingleton.cs" />
+    <Compile Include="DiverApp\Main Classes\DiveSchedule.cs" />
+    <Compile Include="DiverApp\Main Classes\DivingClubSingleton.cs" />
     <Compile Include="DiverApp\Helpers\Enums\CertificateAbsoluteLevel.cs" />
     <Compile Include="DiverApp\Helpers\CertificateHelper.cs" />
     <Compile Include="DiverApp\Helpers\PairHelper.cs" />
     <Compile Include="DiverApp\Helpers\File\Reader.cs" />
     <Compile Include="DiverApp\Helpers\File\Writer.cs" />
+    <Compile Include="DiverApp\Observer\Observer.cs" />
+    <Compile Include="DiverApp\Observer\Subject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

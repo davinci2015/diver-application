@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dvincija_zadaca_1.DiverApp.Algorithm.ConcreteProducts
+namespace dvincija_zadaca_1.DiverApp.Algorithms.ConcreteProducts
 {
-    public class PartnerAtSameLevelAlg : DiveAlgorithmProduct
+    public class PartnerAtSameLevelAlg : DiveAlgorithmProductAbstract
     {
         public override List<PairHelper> GetDivePairs(List<Diver> diversList, DiveSchedule diveSchedule)
         {
@@ -104,9 +104,6 @@ namespace dvincija_zadaca_1.DiverApp.Algorithm.ConcreteProducts
                     start += 3;
                 }
             }
-
-            foreach (Diver d in diversList)
-                d.addDive(diveSchedule);
 
             return pairList;
         }

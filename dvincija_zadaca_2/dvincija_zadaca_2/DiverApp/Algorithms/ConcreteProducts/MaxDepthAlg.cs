@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dvincija_zadaca_1.DiverApp.Algorithm
+namespace dvincija_zadaca_1.DiverApp.Algorithms.ConcreteProducts
 {
-    public class MaxDepthAlg : DiveAlgorithmProduct
+    public class MaxDepthAlg : DiveAlgorithmProductAbstract
     {
         public override List<PairHelper> GetDivePairs(List<Diver> divers, DiveSchedule diveSchedule)
         {
@@ -34,9 +34,6 @@ namespace dvincija_zadaca_1.DiverApp.Algorithm
                     start += 2;
                 }
             }
-
-            foreach (Diver d in divers)
-                d.addDive(diveSchedule);
 
             return pairList;
         }

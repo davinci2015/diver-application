@@ -43,7 +43,7 @@ namespace dvincija_zadaca_1.DiverApp.Helpers
             return certificateName;
         }
 
-        public int setDepthDeterminedByCertificate(string level)
+        public int getDepthDeterminedByCertificate(string level)
         {
             int depth;
             return certifiedDepth.TryGetValue(level, out depth) ? depth : 40;
