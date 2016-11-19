@@ -1,5 +1,8 @@
 ﻿using dvincija_zadaca_1.DiverApp.Algorithms;
+using dvincija_zadaca_1.DiverApp.Flyweight;
 using dvincija_zadaca_1.DiverApp.Helpers;
+using dvincija_zadaca_1.DiverApp.Main_Classes;
+using dvincija_zadaca_1.DiverApp.Visitor;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +16,7 @@ namespace dvincija_zadaca_1.DiverApp
     {
         string diversFilePath { get; set; }
         string diveScheduleFilePath { get; set; }
-        string[] algorithms { get; set; }
+        List<string> algorithms { get; set; }
         string outFilePath { get; set; }
         Random random { get; set; }
 
@@ -22,8 +25,11 @@ namespace dvincija_zadaca_1.DiverApp
         Dictionary<string, Federation> federations = new Dictionary<string, Federation>();
         CertificateHelper certHelper = new CertificateHelper();
         DivingClubSingleton divingClub = DivingClubSingleton.GetInstance();
+        FlyweightFactory certificateFlyweightFactory = FlyweightFactory.GetInstance();
+        InstitutionAbstract HRS = new NationalDivingAssociation("HRS");
+        InstitutionVisitor institutionVisitor = new ConcreteInstitutionVisitor();
 
-        public DiverApplication(int seed, string diversFilePath, string diveScheduleFilePath, string[] algorithms, string outFilePath)
+        public DiverApplication(int seed, string diversFilePath, string diveScheduleFilePath, List<string> algorithms, string outFilePath)
         {
             this.diversFilePath = diversFilePath;
             this.diveScheduleFilePath = diveScheduleFilePath;
@@ -42,7 +48,9 @@ namespace dvincija_zadaca_1.DiverApp
             string name;
             string birthDate;
             string federationName;
+            string certificateName;
             string level;
+            int depthDeterminedByCertificate;
 
             foreach (string d in diversRaw)
             {
@@ -51,21 +59,31 @@ namespace dvincija_zadaca_1.DiverApp
                 name            = diver[0];
                 federationName  = diver[1];
                 level           = diver[2];
-                birthDate       = diver[3];  
+                birthDate       = diver[3];
+
+                if (diver.Count() != 4 || !Validation.ValidateFederationName(federationName) || !Validation.ValidateDiverLevel(level))
+                {
+                    Console.WriteLine("{0} Preskačem pogrešan redak: {1};{2};{3};{4}\n", Validation.diverInputErr, name, federationName, level, birthDate);
+                    continue;
+                }
 
                 // If federation doesn't exist in dictionary then create it 
-                if (!federations.ContainsKey(federationName))
-                {
-                    // Add federation to federations list
-                    federations.Add(federationName, new Federation(federationName));
+                Federation federation = certificateFlyweightFactory.GetFederationInstance(federationName);
+                // Add federation as observer 
+                divingClub.addObserver(federation);
 
-                    // Add federation as observer 
-                    divingClub.addObserver(federations[federationName]);
-                }
-                   
+                // Create new certificate
+                certificateName = certHelper.getCertificateName(federationName, level);
+                depthDeterminedByCertificate = certHelper.getDepthDeterminedByCertificate(level);
+               
+                Certificate certificate = certificateFlyweightFactory.GetCertificateInstance(federationName, certificateName, level, depthDeterminedByCertificate);
 
-                Certificate cert = new Certificate(federationName, certHelper.getCertificateName(federationName, level), level, certHelper.getDepthDeterminedByCertificate(level));
-                divers.Add(new Diver(name, birthDate, cert, federationName));
+                // Create new diver
+                Diver diverObj = new Diver(name, birthDate, certificate, federationName);
+                // Add diver to divers list
+                divers.Add(diverObj);
+                // Add diver to federation
+                federation.divers.Add(diverObj);
             }
         }
 
@@ -76,11 +94,27 @@ namespace dvincija_zadaca_1.DiverApp
         private void AddDiveSchedule(string[] scheduleRaw)
         {
             string[] timeline;
+            string date;
+            string time;
+            string maxDepth;
+            string numOfDivers;
+
             foreach (string s in scheduleRaw)
             {
                 timeline = s.Split(';');
 
-                DiveSchedule schedule = new DiveSchedule(timeline[0], timeline[1], Int32.Parse(timeline[2]), Int32.Parse(timeline[3]));
+                date = timeline[0];
+                time = timeline[1];
+                maxDepth = timeline[2];
+                numOfDivers = timeline[3];
+
+                if (timeline.Count() != 4 || !Validation.ValidateDepth(maxDepth) || !Validation.ValidateNumOfDivers(numOfDivers))
+                {
+                    Console.WriteLine("{0} Preskačem pogrešan redak: {1};{2};{3};{4}\n", Validation.diveInputErr, date, time, maxDepth, numOfDivers);
+                    continue;
+                }
+
+                DiveSchedule schedule = new DiveSchedule(date, time, Int32.Parse(maxDepth), Int32.Parse(numOfDivers));
                 diveSchedule.Add(schedule);
             }
         }
@@ -99,6 +133,13 @@ namespace dvincija_zadaca_1.DiverApp
             for (int i = 0; i < diveSchedule.Count(); i++)
             {
 
+                if (diveSchedule[i].numOfDivers > divers.Count())
+                {
+                    Console.WriteLine("Pogreška za uron {0} - {1} Nemoguće je da postoji uron sa većim brojem ronioca nego je njih stvaran broj!", diveSchedule[i].date, diveSchedule[i].time);
+                    diveSchedule.Remove(diveSchedule[i--]);
+                    continue;
+                }
+
                 // if dive is on same day as previous one then use same list of divers
                 if (diveSchedule[i].date.Equals(date))
                 {
@@ -112,11 +153,17 @@ namespace dvincija_zadaca_1.DiverApp
                 else
                 {
                     // Add divers to schedule
-                    diveSchedule[i].setDivers(divers, random, diveSchedule[i].numOfDivers);
+                    diveSchedule[i].SetDivers(divers, random, diveSchedule[i].numOfDivers);
                 }
 
                 date = diveSchedule[i].date;
             }
+        }
+
+        private DiveSchedule DiveSafetyCheck(InstitutionAbstract institution, InstitutionVisitor visitor)
+        {
+            var safetyCheck = visitor.Visit(institution);
+            return safetyCheck;
         }
 
         /// <summary>
@@ -124,7 +171,7 @@ namespace dvincija_zadaca_1.DiverApp
         /// After that choose algorithm with smallest safety measure sum because it represents highest level of safety
         /// </summary>
         /// <param name="algorithms">Array of algorithm names</param>
-        private void TestAlgorithms(string[] algorithms)
+        private void TestAlgorithms(List<string> algorithms)
         {
             AlgorithmFactoryAbstract diveFactory = new DiveAlgorithmFactory();
 
@@ -164,7 +211,7 @@ namespace dvincija_zadaca_1.DiverApp
                 }
 
                 // Add dive groups to dive
-                diveSchedule[i].setDiveGroups(diverGroupsByAlgorithm[chosenAlgorithmName]);
+                diveSchedule[i].diveGroups = diverGroupsByAlgorithm[chosenAlgorithmName];
 
                 // Add safety measure to dive
                 diveSchedule[i].safetyMeasure = safetyMeasureMax;
@@ -174,10 +221,10 @@ namespace dvincija_zadaca_1.DiverApp
 
                 // Add dive to each diver
                 foreach (Diver d in diveSchedule[i].divers)
-                    d.addDive(diveSchedule[i]);
+                    d.AddDive(diveSchedule[i]);
 
-                // Add dive to dive club
-                divingClub.setDive(diveSchedule[i]);
+                // Add dive to dive club and to national diving association
+                divingClub.SetDive(diveSchedule[i]);
 
                 // Clear dictionary with dive groups because it needs to be empty for next iteration
                 diverGroupsByAlgorithm.Clear();
@@ -191,15 +238,25 @@ namespace dvincija_zadaca_1.DiverApp
 
             if (diversRaw != null && scheduleRaw != null)
             {
+                divingClub.addObserver(HRS);
                 AddDiversToList(diversRaw);
                 AddDiveSchedule(scheduleRaw);
                 AddDiversToDiveSchedule();
                 TestAlgorithms(algorithms);
-                
+
+                var federations = certificateFlyweightFactory.GetAllFederations();
+                var safetyCheckList = new Dictionary<string, DiveSchedule>();
+
                 Writer.CreateFile(outFilePath);
                 Writer.WriteSafetyMeasuresForDive(diveSchedule.AsEnumerable(), outFilePath);
                 Writer.WriteDivers(divers.AsEnumerable(), outFilePath);
                 Writer.StatisticsForFederation(federations, outFilePath);
+                
+                safetyCheckList[HRS.institutionName] = DiveSafetyCheck(HRS, institutionVisitor);
+                foreach (var federation in federations)
+                    safetyCheckList[federation.Key] = DiveSafetyCheck(federation.Value, institutionVisitor);
+
+                Writer.PrintSafetyCheck(safetyCheckList, outFilePath);
             }
         }
     }

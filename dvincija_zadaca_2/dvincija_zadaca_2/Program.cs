@@ -17,7 +17,7 @@ namespace dvincija_zadaca_1
             string errMsg = "";
 
             if (!args.Count().Equals(7))
-                Console.WriteLine("Warning: Invalid number of arguments");
+                Console.WriteLine("Neispravan broj argumenata!");
             else
             {
                 int seed = 0;
@@ -45,13 +45,16 @@ namespace dvincija_zadaca_1
                     seed = Int32.Parse(args[0]);
                 }
                     
-                if (!Validation.ValidateFilePath(diversFilePath) || !Validation.ValidateFilePath(diveScheduleFilePath) || Validation.ValidateFilePath(outFilePath))
+                // File path validation
+                if (!Validation.ValidateFilePath(diversFilePath) || !Validation.ValidateFilePath(diveScheduleFilePath) || !Validation.ValidateFilePath(outFilePath))
                 {
                     validArguments = false;
                     errMsg = Validation.filePathErr;
                 }
-                
-                if (!Validation.ValidateAlgorithmNames(algorithms))
+
+                // Algorithm name validation
+                List<string> acceptedAlgorithms = Validation.ValidateAlgorithmNames(algorithms);
+                if (acceptedAlgorithms.Count() == 0)
                 {
                     validArguments = false;
                     errMsg = Validation.algorithmErr;
@@ -59,11 +62,14 @@ namespace dvincija_zadaca_1
 
                 if (validArguments)
                 {
-                    DiverApplication APP = new DiverApplication(seed, diversFilePath, diveScheduleFilePath, algorithms, outFilePath);
+                    DiverApplication APP = new DiverApplication(seed, diversFilePath, diveScheduleFilePath, acceptedAlgorithms, outFilePath);
                     APP.Init();
                 }
                 else
+                {
                     Console.WriteLine(errMsg);
+                }
+                    
             }
 
             Console.ReadLine();

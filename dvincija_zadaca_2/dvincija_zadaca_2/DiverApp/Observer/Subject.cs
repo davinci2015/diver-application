@@ -9,8 +9,8 @@ namespace dvincija_zadaca_1.DiverApp.Observer
     public interface Subject
     {
         void addObserver(Observer o);
-        void removeObserver(Observer o);
-        void setDive(DiveSchedule dive);
-        DiveSchedule getDive();
+        void RemoveObserver(Observer o);
+        void SetDive(DiveSchedule dive);
+        DiveSchedule GetDive();
     }
 }

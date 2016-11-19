@@ -16,6 +16,13 @@ namespace dvincija_zadaca_1.DiverApp
         public Certificate certificate;
         public List<DiveSchedule> diveSchedule = new List<DiveSchedule>();
 
+        /// <summary>
+        /// Diver constructor
+        /// </summary>
+        /// <param name="name">diver name</param>
+        /// <param name="birthDate">diver birth date</param>
+        /// <param name="certificate">diver certificate</param>
+        /// <param name="federationName">certificate authorized federation name</param>
         public Diver(string name, string birthDate, Certificate certificate, string federationName)
         {
             this.name = name;
@@ -24,7 +31,11 @@ namespace dvincija_zadaca_1.DiverApp
             this.federationName = federationName;
         }
 
-        public void addDive(DiveSchedule dive)
+        /// <summary>
+        /// Add dive to dive schedule list
+        /// </summary>
+        /// <param name="dive">dive in which diver participated</param>
+        public void AddDive(DiveSchedule dive)
         {
             diveSchedule.Add(dive);
         }

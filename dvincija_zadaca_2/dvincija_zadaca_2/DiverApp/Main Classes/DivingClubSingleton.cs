@@ -36,26 +36,49 @@ namespace dvincija_zadaca_1.DiverApp
             }
         }
 
-        public void setDive(DiveSchedule dive)
+        /// <summary>
+        /// Add dive to list and notify all observers
+        /// </summary>
+        /// <param name="dive">Dive schedule object</param>
+        public void SetDive(DiveSchedule dive)
         {
             diveSchedule.Add(dive);
-            notifyObservers();
+            NotifyObserver();
         }
-        public DiveSchedule getDive()
+
+        /// <summary>
+        /// Get last dive schedule in list
+        /// </summary>
+        /// <returns>Last dive schedule in dive schedule list</returns>
+        public DiveSchedule GetDive()
         {
             return diveSchedule.Last();
         }
 
+        /// <summary>
+        /// Add observer to observers list
+        /// </summary>
+        /// <param name="newObserver">observer to add</param>
         public void addObserver(Observer.Observer newObserver)
         {
-            observers.Add(newObserver);
+            // Don't add observer if he is already exists in observer list
+            if (!observers.Contains(newObserver))    
+                observers.Add(newObserver);
         }
 
-        public void removeObserver(Observer.Observer observerToDelete)
+        /// <summary>
+        /// Remove observer from observers list
+        /// </summary>
+        /// <param name="observerToDelete">observer to delete</param>
+        public void RemoveObserver(Observer.Observer observerToDelete)
         {
             observers.Remove(observerToDelete);
         }
-        public void notifyObservers()
+
+        /// <summary>
+        /// Notify all observers that update happened
+        /// </summary>
+        public void NotifyObserver()
         {
             for (int i = 0; i < observers.Count(); i++)
                 observers[i].Update(this);

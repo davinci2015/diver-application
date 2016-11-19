@@ -15,6 +15,13 @@ namespace dvincija_zadaca_1.DiverApp
         public int depth { get; set; }
         public int absoluteLevel { get; set; }
 
+        /// <summary>
+        /// Certificate constructor
+        /// </summary>
+        /// <param name="authorizedFederation">Certificate authorized federation name</param>
+        /// <param name="name">Certificate name</param>
+        /// <param name="level">Certificate level</param>
+        /// <param name="depth">Depth determined by certificate level and name</param>
         public Certificate(string authorizedFederation, string name, string level, int depth)
         {
             this.authorizedFederation = authorizedFederation;

@@ -49,6 +49,8 @@
     <Compile Include="DiverApp\Algorithms\DiveAlgorithmFactory.cs" />
     <Compile Include="DiverApp\Algorithms\AlgorithmFactoryAbstract.cs" />
     <Compile Include="DiverApp\Algorithms\DiveAlgorithmProductAbstract.cs" />
+    <Compile Include="DiverApp\Flyweight\FlyweightFactory.cs" />
+    <Compile Include="DiverApp\Helpers\Validation.cs" />
     <Compile Include="DiverApp\Main Classes\Federation.cs" />
     <Compile Include="DiverApp\Main Classes\Certificate.cs" />
     <Compile Include="DiverApp\Main Classes\Diver.cs" />
@@ -60,8 +62,12 @@
     <Compile Include="DiverApp\Helpers\PairHelper.cs" />
     <Compile Include="DiverApp\Helpers\File\Reader.cs" />
     <Compile Include="DiverApp\Helpers\File\Writer.cs" />
+    <Compile Include="DiverApp\Main Classes\InstitutionAbstract.cs" />
+    <Compile Include="DiverApp\Main Classes\NationalDivingAssociation.cs" />
     <Compile Include="DiverApp\Observer\Observer.cs" />
     <Compile Include="DiverApp\Observer\Subject.cs" />
+    <Compile Include="DiverApp\Visitor\ConcreteInstitutionVisitor.cs" />
+    <Compile Include="DiverApp\Visitor\InstitutionVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,7 +75,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
