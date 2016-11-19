@@ -28,16 +28,16 @@ namespace dvincija_zadaca_1.DiverApp.Helpers
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(GenerateHeading("RONIOCI"));
+            builder.Append(GenerateHeading("RONIOCI I NJIHOVI URONI"));
 
-            builder.AppendFormat("{0,-10}{1,-20}{2,-20}{3,-20}\n", "#", "IME RONIOCA", "DATUM URONA", "BROJ RONIOCA");
-            builder.AppendFormat("{0,-10}{1,-20}{2,-20}{3}\n",     "--", "----------", "-----------", "------------");
+            builder.AppendFormat("{0,-5}{1,-16}{2,-15}{3,-17}{4,-17}{5,-20}{6}\n", "#", "IME RONIOCA", "DATUM URONA", "VRIJEME URONA", "BROJ RONIOCA", "MJERA SIGURNOSTI", "ALGORITAM");
+            builder.AppendFormat("{0,-5}{1,-16}{2,-15}{3,-17}{4,-17}{5,-20}{6}\n","--", "-----------", "-----------", "-------------", "------------", "----------------", "---------");
 
             foreach (Diver diver in divers)
             {
                 int diveCounter = 1;
                 foreach (DiveSchedule dive in diver.diveSchedule)
-                    builder.AppendFormat("{0,-10}{1,-20}{2,-20}{3,-20}\n", diveCounter++, diver.name, dive.date, dive.numOfDivers);
+                    builder.AppendFormat("{0,-5}{1,-16}{2,-15}{3,-17}{4,-17}{5,-20}{6}\n", diveCounter++, diver.name, dive.date, dive.time, dive.numOfDivers, dive.safetyMeasure, dive.algorithmName, dive.algorithmName);
                 builder.AppendFormat("\n");
             }
             

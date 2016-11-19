@@ -61,6 +61,7 @@ namespace dvincija_zadaca_1.DiverApp
                 level           = diver[2];
                 birthDate       = diver[3];
 
+                // Validate data
                 if (diver.Count() != 4 || !Validation.ValidateFederationName(federationName) || !Validation.ValidateDiverLevel(level))
                 {
                     Console.WriteLine("{0} Preskačem pogrešan redak: {1};{2};{3};{4}\n", Validation.diverInputErr, name, federationName, level, birthDate);
@@ -75,7 +76,6 @@ namespace dvincija_zadaca_1.DiverApp
                 // Create new certificate
                 certificateName = certHelper.getCertificateName(federationName, level);
                 depthDeterminedByCertificate = certHelper.getDepthDeterminedByCertificate(level);
-               
                 Certificate certificate = certificateFlyweightFactory.GetCertificateInstance(federationName, certificateName, level, depthDeterminedByCertificate);
 
                 // Create new diver
@@ -160,6 +160,13 @@ namespace dvincija_zadaca_1.DiverApp
             }
         }
 
+
+        /// <summary>
+        /// Visit institution and get minimum safe dive
+        /// </summary>
+        /// <param name="institution">Institution object that we want to visit</param>
+        /// <param name="visitor">Visitor object</param>
+        /// <returns>Dive that have minimum safety measure for institution</returns>
         private DiveSchedule DiveSafetyCheck(InstitutionAbstract institution, InstitutionVisitor visitor)
         {
             var safetyCheck = visitor.Visit(institution);
@@ -236,28 +243,26 @@ namespace dvincija_zadaca_1.DiverApp
             string[] diversRaw = Reader.ReadFile(diversFilePath);
             string[] scheduleRaw = Reader.ReadFile(diveScheduleFilePath);
 
-            if (diversRaw != null && scheduleRaw != null)
-            {
-                divingClub.addObserver(HRS);
-                AddDiversToList(diversRaw);
-                AddDiveSchedule(scheduleRaw);
-                AddDiversToDiveSchedule();
-                TestAlgorithms(algorithms);
+            divingClub.addObserver(HRS);
+            AddDiversToList(diversRaw);
+            AddDiveSchedule(scheduleRaw);
+            AddDiversToDiveSchedule();
+            TestAlgorithms(algorithms);
 
-                var federations = certificateFlyweightFactory.GetAllFederations();
-                var safetyCheckList = new Dictionary<string, DiveSchedule>();
+            var federations = certificateFlyweightFactory.GetAllFederations();
+            var safetyCheckList = new Dictionary<string, DiveSchedule>();
 
-                Writer.CreateFile(outFilePath);
-                Writer.WriteSafetyMeasuresForDive(diveSchedule.AsEnumerable(), outFilePath);
-                Writer.WriteDivers(divers.AsEnumerable(), outFilePath);
-                Writer.StatisticsForFederation(federations, outFilePath);
+            Writer.CreateFile(outFilePath);
+            Writer.WriteSafetyMeasuresForDive(diveSchedule.AsEnumerable(), outFilePath);
+            Writer.WriteDivers(divers.AsEnumerable(), outFilePath);
+            Writer.StatisticsForFederation(federations, outFilePath);
                 
-                safetyCheckList[HRS.institutionName] = DiveSafetyCheck(HRS, institutionVisitor);
-                foreach (var federation in federations)
-                    safetyCheckList[federation.Key] = DiveSafetyCheck(federation.Value, institutionVisitor);
+            safetyCheckList[HRS.institutionName] = DiveSafetyCheck(HRS, institutionVisitor);
+            foreach (var federation in federations)
+                safetyCheckList[federation.Key] = DiveSafetyCheck(federation.Value, institutionVisitor);
 
-                Writer.PrintSafetyCheck(safetyCheckList, outFilePath);
-            }
+            Writer.PrintSafetyCheck(safetyCheckList, outFilePath);
+            Console.WriteLine("Podaci uspješno zapisani u " + outFilePath);
         }
     }
 }

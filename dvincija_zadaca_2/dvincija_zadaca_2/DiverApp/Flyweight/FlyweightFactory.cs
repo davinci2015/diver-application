@@ -67,13 +67,13 @@ namespace dvincija_zadaca_1.DiverApp.Flyweight
             return federationsPool[federationName];
         }
 
+        /// <summary>
+        /// Get all federations
+        /// </summary>
+        /// <returns>Federations list</returns>
         public Dictionary<string, Federation> GetAllFederations()
         {
             return federationsPool;
-        }
-        public int getFedCount()
-        {
-            return federationsPool.Count();
         }
     }
 }

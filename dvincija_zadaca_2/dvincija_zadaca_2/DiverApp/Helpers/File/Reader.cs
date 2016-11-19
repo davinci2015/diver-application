@@ -11,7 +11,7 @@ namespace dvincija_zadaca_1.DiverApp.Helpers
     {
         public static string[] ReadFile(string path)
         {
-            path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName + "\\", path);
+            path = Path.Combine(Directory.GetCurrentDirectory() + "\\", path);
             string[] content = null;
 
             try
@@ -21,6 +21,8 @@ namespace dvincija_zadaca_1.DiverApp.Helpers
             catch (FileNotFoundException)
             {
                 Console.WriteLine("Warning - {0} - file not found!", path);
+                Console.ReadLine();
+                Environment.Exit(0);
             }
 
             return content;
