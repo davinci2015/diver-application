@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dvincija_zadaca_1.DiverApp.Main_Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -59,7 +60,7 @@ namespace dvincija_zadaca_1.DiverApp.Helpers
             AppendTextToFile(path, builder.ToString());
         }
 
-        public static void StatisticsForFederation(Dictionary<string, Federation> federations, string path)
+        public static void StatisticsForFederation(Dictionary<string, InstitutionAbstract> federations, string path)
         {
             StringBuilder builder = new StringBuilder();
 

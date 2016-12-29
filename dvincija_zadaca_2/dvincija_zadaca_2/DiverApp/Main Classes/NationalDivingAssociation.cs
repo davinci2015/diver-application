@@ -10,7 +10,6 @@ namespace dvincija_zadaca_1.DiverApp.Main_Classes
 {
     public class NationalDivingAssociation : InstitutionAbstract
     {
-        
         public NationalDivingAssociation(string institutionName)
         {
             this.institutionName = institutionName;

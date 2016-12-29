@@ -22,7 +22,7 @@ namespace dvincija_zadaca_1.DiverApp
 
         List<Diver> divers = new List<Diver>();
         List<DiveSchedule> diveSchedule = new List<DiveSchedule>();
-        Dictionary<string, Federation> federations = new Dictionary<string, Federation>();
+        Dictionary<string, InstitutionAbstract> federations = new Dictionary<string, InstitutionAbstract>();
         CertificateHelper certHelper = new CertificateHelper();
         DivingClubSingleton divingClub = DivingClubSingleton.GetInstance();
         FlyweightFactory certificateFlyweightFactory = FlyweightFactory.GetInstance();
@@ -69,7 +69,7 @@ namespace dvincija_zadaca_1.DiverApp
                 }
 
                 // If federation doesn't exist in dictionary then create it 
-                Federation federation = certificateFlyweightFactory.GetFederationInstance(federationName);
+                InstitutionAbstract federation = certificateFlyweightFactory.GetFederationInstance(federationName);
                 // Add federation as observer 
                 divingClub.addObserver(federation);
 
@@ -84,6 +84,7 @@ namespace dvincija_zadaca_1.DiverApp
                 divers.Add(diverObj);
                 // Add diver to federation
                 federation.divers.Add(diverObj);
+                HRS.divers.Add(diverObj);
             }
         }
 
@@ -255,9 +256,10 @@ namespace dvincija_zadaca_1.DiverApp
             Writer.CreateFile(outFilePath);
             Writer.WriteSafetyMeasuresForDive(diveSchedule.AsEnumerable(), outFilePath);
             Writer.WriteDivers(divers.AsEnumerable(), outFilePath);
+
+            federations.Add(HRS.institutionName, HRS);
             Writer.StatisticsForFederation(federations, outFilePath);
-                
-            safetyCheckList[HRS.institutionName] = DiveSafetyCheck(HRS, institutionVisitor);
+            
             foreach (var federation in federations)
                 safetyCheckList[federation.Key] = DiveSafetyCheck(federation.Value, institutionVisitor);
 

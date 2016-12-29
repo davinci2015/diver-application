@@ -1,27 +1,25 @@
-﻿using dvincija_zadaca_1.DiverApp.Main_Classes;
+﻿using dvincija_zadaca_3.DiverApp.Main;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dvincija_zadaca_1.DiverApp.Flyweight
+namespace dvincija_zadaca_3.DiverApp.Flyweight
 {
-    public class FlyweightFactory
+    public class CertificateFlyweightFactory
     {
-        private static FlyweightFactory instance;
+        private static CertificateFlyweightFactory instance;
         Dictionary<string, Certificate> certificatePool;
-        Dictionary<string, InstitutionAbstract> federationsPool;
-        private FlyweightFactory()
+
+        private CertificateFlyweightFactory()
         {
             certificatePool = new Dictionary<string, Certificate>();
-            federationsPool = new Dictionary<string, InstitutionAbstract>();
         }
-
-        public static FlyweightFactory GetInstance()
+        public static CertificateFlyweightFactory GetInstance()
         {
             if (instance == null)
-                instance = new FlyweightFactory();
+                instance = new CertificateFlyweightFactory();
             return instance;
         }
 
@@ -47,34 +45,6 @@ namespace dvincija_zadaca_1.DiverApp.Flyweight
             }
 
             return certificatePool[key];
-        }
-
-        /// <summary>
-        /// Check if federation already exists. If it exists return it otherwise create new
-        /// and add it to federations list
-        /// Federation name is key
-        /// </summary>
-        /// <param name="federationName"></param>
-        /// <returns></returns>
-        public InstitutionAbstract GetFederationInstance(string federationName)
-        {
-            // Check if federation already exists
-            if (!federationsPool.ContainsKey(federationName))
-            {
-                InstitutionAbstract federation = new Federation(federationName);
-                federationsPool.Add(federationName, federation);
-            }
-
-            return federationsPool[federationName];
-        }
-
-        /// <summary>
-        /// Get all federations
-        /// </summary>
-        /// <returns>Federations list</returns>
-        public Dictionary<string, InstitutionAbstract> GetAllFederations()
-        {
-            return federationsPool;
         }
     }
 }
