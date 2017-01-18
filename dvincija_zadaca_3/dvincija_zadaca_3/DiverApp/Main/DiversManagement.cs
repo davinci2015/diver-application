@@ -1,5 +1,7 @@
-﻿using dvincija_zadaca_3.DiverApp.Flyweight;
+﻿using dvincija_zadaca_3.DiverApp.Composite;
+using dvincija_zadaca_3.DiverApp.Flyweight;
 using dvincija_zadaca_3.DiverApp.Helpers;
+using dvincija_zadaca_3.DiverApp.Memento;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +12,10 @@ namespace dvincija_zadaca_3.DiverApp.Main
 {
     public class DiversManagement
     {
-        List<Diver> initialDiversList = new List<Diver>();
         List<Diver> diversList = new List<Diver>();
+        List<ConcreteEquipment> basicEquipment = new List<ConcreteEquipment>();
+        Caretaker caretaker = new Caretaker();
+        Dive dive;
 
         const string drySuit = "Suho odijelo";
         const string underwaterPhotographer = "Podvodni fotograf";
@@ -19,27 +23,42 @@ namespace dvincija_zadaca_3.DiverApp.Main
 
         int numOfUnderwaterPhotographers = 0;
 
+        public DiversManagement(Dive dive)
+        {
+            this.dive = dive;
+        }
+
         public List<Diver> GetDivers()
         {
             return diversList;
         }
 
-        public void AddDiverToInitialList(Diver diver)
+        public List<ConcreteEquipment> GetBasicEquipment()
         {
-            initialDiversList.Add(diver);
+            return basicEquipment;
         }
 
         public void RestoreDiversList()
         {
-            diversList.Clear();
-            diversList = initialDiversList.ToList();
+            diversList = RestoreFromMemento();
         }
+
         public void RemoveDiverFromList(string diverName)
         {
             Diver diverToRemove = diversList.SingleOrDefault(x => x.name == diverName);
             diversList.Remove(diverToRemove);
         }
+        
+        public Memento.Memento SaveToMemento()
+        {
+            return new Memento.Memento(diversList);
+        }
 
+        public List<Diver> RestoreFromMemento()
+        {
+            return caretaker.Memento.Divers;
+        }
+        
         public int GetNumberOfUndewaterPhotographers()
         {
             return numOfUnderwaterPhotographers;
@@ -72,10 +91,7 @@ namespace dvincija_zadaca_3.DiverApp.Main
 
                 // Validate data
                 if (diver.Count() != 4 || !Validation.ValidateFederationName(federationName) || !Validation.ValidateDiverLevel(level))
-                {
-                    Console.WriteLine("{0} Preskačem pogrešan redak: {1};{2};{3};{4}\n", Validation.diverInputErr, name, federationName, level, birthDate);
                     continue;
-                }
 
                 // Create new certificate
                 certificateName = certHelper.getCertificateName(federationName, level);
@@ -90,7 +106,7 @@ namespace dvincija_zadaca_3.DiverApp.Main
                 diverObj.AddSuperPowers(superPowers);
 
                 // Add diver to divers list
-                AddDiverToInitialList(diverObj);
+                diversList.Add(diverObj);
             }
         }
 
@@ -111,17 +127,17 @@ namespace dvincija_zadaca_3.DiverApp.Main
             return superPowers;
         }
 
-        public void FilterDivers(int depth, int temperature)
+        public void FilterDivers(int depth, int temperature, bool isNightDive)
         {
-            diversList = initialDiversList.ToList();
-
-            foreach (Diver diver in diversList)
+            int diversNo = diversList.Count();
+            foreach (Diver diver in diversList.ToArray())
             {
-                // Filter by depth and dry suit specialty
+                // Filter by depth, dry suit and night dive specialty
                 if ((diver.certificate.depth + 10 < depth) ||
-                     (temperature < 15 && diver.CheckIfDiverHasSuperPower(drySuit) == false))
+                     (temperature < 15 && diver.CheckIfDiverHasSuperPower(drySuit) == false) ||
+                     (isNightDive == true && diver.CheckIfDiverHasSuperPower(nightDive) == false))
                 {
-                    initialDiversList.Remove(diver);
+                    diversList.Remove(diver);
                     continue;
                 }
 
@@ -131,9 +147,7 @@ namespace dvincija_zadaca_3.DiverApp.Main
                     numOfUnderwaterPhotographers++;
                 }
             }
-           
-            RestoreDiversList();
-
+            caretaker.Memento = SaveToMemento();
         }
 
         public void ChangeDiverEquipmentAssociation(string diverName)
@@ -141,6 +155,13 @@ namespace dvincija_zadaca_3.DiverApp.Main
             Diver diver = diversList.FirstOrDefault(x => x.name == diverName);
             if (diver != null)
                 diver.ChangeEquipmentAssociationType();
+        }
+
+        public void AssignEquipmentToDivers(CompositeEquipment allEquipment, Dive dive) 
+        {
+            foreach (Diver diver in diversList)
+                allEquipment.EquipDiver(diver, dive);
+            allEquipment.FindBasicEquipmentForDive(basicEquipment, dive);
         }
     }
 }

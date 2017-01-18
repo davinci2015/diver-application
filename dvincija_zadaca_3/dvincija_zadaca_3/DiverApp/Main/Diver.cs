@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dvincija_zadaca_3.DiverApp.Composite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace dvincija_zadaca_3.DiverApp.Main
         private List<string> superPowers;
         private bool basicEquipmentAssociation = true;
         public Certificate certificate;
+        List<ConcreteEquipment> equipment = new List<ConcreteEquipment>();
 
         /// <summary>
         /// Diver constructor
@@ -40,6 +42,16 @@ namespace dvincija_zadaca_3.DiverApp.Main
             return superPowers;
         }
 
+        public void AddEquipment(ConcreteEquipment item)
+        {
+            equipment.Add(item);
+        }
+
+        public List<ConcreteEquipment> GetDiverEquipment()
+        {
+            return equipment;
+        }
+
         public bool CheckIfDiverHasSuperPower(string superPower)
         {
             return superPowers.Contains(superPower);
@@ -49,9 +61,18 @@ namespace dvincija_zadaca_3.DiverApp.Main
         {
             basicEquipmentAssociation = !basicEquipmentAssociation;
         }
-        public bool GetEquipmentAssociationType()
+        public bool IsBasicEquipmentAssociation()
         {
             return basicEquipmentAssociation;
+        }
+        public bool CheckExistingEquipmentByCategory(string equipmentID)
+        {
+            bool found = false;
+            foreach (ConcreteEquipment eq in equipment)
+                if (eq.ID.Remove(eq.ID.Length - 2) == equipmentID.Remove(equipmentID.Length - 2) && equipmentID[0] != '0')
+                    found = true;
+                
+            return found;
         }
     }
 }
