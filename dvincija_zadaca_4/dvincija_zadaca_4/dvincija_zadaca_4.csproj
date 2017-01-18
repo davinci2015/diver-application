@@ -43,6 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DiverApp\Flyweight\CertificateFlyweightFactory.cs" />
+    <Compile Include="DiverApp\Helpers\CertificateHelper.cs" />
+    <Compile Include="DiverApp\Helpers\Reader.cs" />
+    <Compile Include="DiverApp\Helpers\Validation.cs" />
+    <Compile Include="DiverApp\Main\Certificate.cs" />
+    <Compile Include="DiverApp\Main\Dive.cs" />
+    <Compile Include="DiverApp\Main\DiveManagement.cs" />
+    <Compile Include="DiverApp\Main\Diver.cs" />
+    <Compile Include="DiverApp\Main\DiversManagement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
