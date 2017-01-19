@@ -10,14 +10,11 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility.Filters
     public class CertificateFilter : IFilterChain
     {
         IFilterChain nextFilter;
-        public void FilterDivers(List<Diver> divers)
+        public IFilterChain NextChain { set { nextFilter = value; } }
+
+        public void FilterDivers(List<Diver> divers, int numOfDiversToRemove)
         {
             throw new NotImplementedException();
-        }
-
-        public void SetNextChain(IFilterChain chain)
-        {
-            this.nextFilter = chain;
-        }
+        }  
     }
 }

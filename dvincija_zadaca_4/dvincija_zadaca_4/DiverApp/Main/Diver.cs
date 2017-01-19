@@ -13,7 +13,11 @@ namespace dvincija_zadaca_4.DiverApp.Main
         public string federationName { get; private set; }
         public List<string> superPowers;
         public Certificate certificate { get; private set; }
+        List<Dive> diveList = new List<Dive>();
         public bool basicEquipmentAssociation = true;
+
+        public List<Dive> DiveList { get { return diveList; } }
+        public int NumOfDives { get { return diveList.Count(); } }
 
         /// <summary>
         /// Diver constructor
@@ -32,6 +36,11 @@ namespace dvincija_zadaca_4.DiverApp.Main
         public void AddSuperPowers(List<string> superPowers)
         {
             this.superPowers = superPowers;
+        }
+
+        public void AddDiveToList(Dive dive)
+        {
+            diveList.Add(dive);
         }
 
         

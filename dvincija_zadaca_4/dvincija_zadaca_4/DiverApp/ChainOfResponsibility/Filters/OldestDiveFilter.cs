@@ -10,14 +10,10 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility.Filters
     public class OldestDiveFilter : IFilterChain
     {
         IFilterChain nextFilter;
+        public IFilterChain NextChain { set { nextFilter = value; } }
         public void FilterDivers(List<Diver> divers)
         {
             throw new NotImplementedException();
-        }
-
-        public void SetNextChain(IFilterChain chain)
-        {
-            this.nextFilter = chain;
         }
     }
 }

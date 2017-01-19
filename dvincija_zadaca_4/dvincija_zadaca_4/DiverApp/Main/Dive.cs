@@ -10,17 +10,15 @@ namespace dvincija_zadaca_4.DiverApp.Main
     {
         DateTime date { get; set; }
         string time { get; set; }
-        int depth { get; set; }
-        int numOfDiversNeeded { get; set; }
-        int temperature { get; set; }
-        bool isNightDive { get; set; }
         int numOfPhotographers { get; set; }
+        public int numOfDiversNeeded { get; private set; }
+        public int depth { get; private set; }
+        public int temperature { get; private set; }
+        public bool isNightDive { get; private set; }
         List<Diver> divers = new List<Diver>();
 
         public int NumOfDivers { get { return divers.Count(); } }
-        public int Depth { get { return depth; } }
-        public int Temperature { get { return temperature; } }
-        public bool IsNightDive { get { return isNightDive; } }
+        public List<Diver> Divers { get { return divers; } }
 
         public Dive(DateTime date, string time, int depth, int numOfDiversNeeded, int temperature, bool isNightDive, int numOfPhotographers)
         {

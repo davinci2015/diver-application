@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dvincija_zadaca_4.DiverApp.ChainOfResponsibility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,9 +41,19 @@ namespace dvincija_zadaca_4.DiverApp.Main
 
         public void AssignDiversToDive()
         {
-            foreach (Dive d in diveList)
+            foreach (Dive dive in diveList)
             {
-                FilterDivers(d, diverList);
+                FilterDivers(dive, diverList);
+
+                // If there are more divers than needed
+                if (dive.NumOfDivers > dive.numOfDiversNeeded)
+                {
+                    int numOfDiversToRemove = dive.NumOfDivers - dive.numOfDiversNeeded;
+
+                    DiverFilterChain filterChain = new DiverFilterChain();
+                    filterChain.FilterDivers(dive.Divers, numOfDiversToRemove);
+                }
+
             }
         }
 
@@ -59,9 +70,9 @@ namespace dvincija_zadaca_4.DiverApp.Main
             foreach (Diver diver in diverList.ToArray())
             {
                 // Filter by depth, dry suit and night dive specialty
-                if ((diver.certificate.Depth + 10 < dive.Depth) ||
-                     (dive.Temperature < 15 && !diver.CheckIfDiverHasSuperPower(drySuit)) ||
-                     (dive.IsNightDive && !diver.CheckIfDiverHasSuperPower(nightDive)))    
+                if ((diver.certificate.Depth + 10 < dive.depth) ||
+                     (dive.temperature < 15 && !diver.CheckIfDiverHasSuperPower(drySuit)) ||
+                     (dive.isNightDive && !diver.CheckIfDiverHasSuperPower(nightDive)))    
                     continue;
                 
                 // Count how many divers has photography specialty
@@ -69,6 +80,7 @@ namespace dvincija_zadaca_4.DiverApp.Main
                     numOfUnderwaterPhotographers++;
 
                 dive.AddDiver(diver);
+                diver.AddDiveToList(dive);
             }
         }
     }

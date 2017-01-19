@@ -11,7 +11,6 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility
     public class DiverFilterChain
     {
         IFilterChain filterFirst;
-
         public DiverFilterChain()
         {
             // Init the chain
@@ -21,13 +20,13 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility
             CertificateFilter filterThird = new CertificateFilter();
 
             // Set next chain responsibility
-            filterFirst.SetNextChain(filterSecond);
-            filterSecond.SetNextChain(filterThird);
+            filterFirst.NextChain = filterSecond;
+            filterSecond.NextChain = filterThird;
         }
 
-        public void FilterDivers(List<Diver> diverList)
+        public void FilterDivers(List<Diver> diverList, int numOfDiversToRemove)
         {
-            filterFirst.FilterDivers(diverList);
+            filterFirst.FilterDivers(diverList, numOfDiversToRemove);
         }
 
     }

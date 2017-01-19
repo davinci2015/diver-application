@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DiverApp\ChainOfResponsibility\DiverFilterChain.cs" />
+    <Compile Include="DiverApp\ChainOfResponsibility\Filters\CertificateFilter.cs" />
+    <Compile Include="DiverApp\ChainOfResponsibility\Filters\DiveNumberFilter.cs" />
+    <Compile Include="DiverApp\ChainOfResponsibility\Filters\OldestDiveFilter.cs" />
+    <Compile Include="DiverApp\ChainOfResponsibility\IFilterChain.cs" />
     <Compile Include="DiverApp\Flyweight\CertificateFlyweightFactory.cs" />
     <Compile Include="DiverApp\Helpers\CertificateHelper.cs" />
     <Compile Include="DiverApp\Helpers\Reader.cs" />

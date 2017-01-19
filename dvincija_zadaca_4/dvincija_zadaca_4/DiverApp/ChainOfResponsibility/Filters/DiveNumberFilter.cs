@@ -10,20 +10,20 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility.Filters
     public class DiveNumberFilter : IFilterChain
     {
         IFilterChain nextFilter;
-        public void FilterDivers(List<Diver> divers)
+        public IFilterChain NextChain { set { nextFilter = value; } }
+        public void FilterDivers(List<Diver> divers, int numOfDiversToRemove)
         {
-            Console.WriteLine("Filtriram po broju urona");
+            int max = divers.Max(x => x.NumOfDives);
+            List<Diver> diversToRemove = divers.Where(x => x.NumOfDives == max).ToList();
 
-            // TODO 
-            // Filtriraj po broju urona
-
-            // Ukoliko treba još filtrirati postavi
-            // nextFilter.FilterDivers(divers);
-        }
-
-        public void SetNextChain(IFilterChain chain)
-        {
-            this.nextFilter = chain;
+            foreach (Diver diverToRemove in diversToRemove)
+            {
+                if (numOfDiversToRemove-- > 0) divers.Remove(diverToRemove);
+                else break;
+            }
+            
+            if (numOfDiversToRemove > 0)
+                nextFilter.FilterDivers(divers, numOfDiversToRemove);
         }
     }
 }
