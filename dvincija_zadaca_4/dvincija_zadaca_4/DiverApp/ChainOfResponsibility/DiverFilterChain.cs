@@ -20,8 +20,9 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility
             CertificateFilter filterThird = new CertificateFilter();
 
             // Set next chain responsibility
-            filterFirst.NextChain = filterSecond;
+            filterFirst.NextChain  = filterSecond;
             filterSecond.NextChain = filterThird;
+            filterThird.NextChain  = filterFirst;
         }
 
         public void FilterDivers(List<Diver> diverList, int numOfDiversToRemove)

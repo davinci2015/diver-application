@@ -29,7 +29,7 @@ namespace dvincija_zadaca_4.DiverApp.Helpers
             { "CMAS", new string[] { "Three Star Diver", "Three Star Diver", "One Star Instructor", "Two Star Instructor", "Two Star Instructor", "Two Star Instructor", "Two Star Instructor" } }
         };
 
-        public string getCertificateName(string federation, string level)
+        public string GetCertificateName(string federation, string level)
         {
             string certificateName = "";
 
@@ -41,7 +41,7 @@ namespace dvincija_zadaca_4.DiverApp.Helpers
             return certificateName;
         }
 
-        public int getDepthDeterminedByCertificate(string level)
+        public int GetDepthDeterminedByCertificate(string level)
         {
             int depth;
             return certifiedDepth.TryGetValue(level, out depth) ? depth : 40;

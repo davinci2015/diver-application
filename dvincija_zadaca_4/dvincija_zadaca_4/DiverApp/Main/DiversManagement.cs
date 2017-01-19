@@ -43,8 +43,8 @@ namespace dvincija_zadaca_4.DiverApp.Main
                     continue;
 
                 // Create new certificate
-                certificateName = certHelper.getCertificateName(federationName, level);
-                depthDeterminedByCertificate = certHelper.getDepthDeterminedByCertificate(level);
+                certificateName = certHelper.GetCertificateName(federationName, level);
+                depthDeterminedByCertificate = certHelper.GetDepthDeterminedByCertificate(level);
                 Certificate certificate = certificateFactory.GetCertificateInstance(federationName, certificateName, level, depthDeterminedByCertificate);
 
                 // Create new diver

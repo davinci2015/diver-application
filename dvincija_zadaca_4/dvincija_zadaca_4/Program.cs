@@ -30,12 +30,17 @@ namespace dvincija_zadaca_4
                 string[] superPowerRaw  = Reader.ReadFile(filePathSpecialty);
                 string[] equipmentRaw   = Reader.ReadFile(fileEquipmentPath);
 
+                // Set divers
                 DiversManagement diversManagement = new DiversManagement();
                 diversManagement.AddDiversToList(diversRaw, superPowerRaw);
 
+                // Set dives
                 DiveManagement diveManagement = new DiveManagement(diversManagement.diversList);
                 diveManagement.AddDivesToList(dives);
                 diveManagement.AssignDiversToDive();
+
+                // Print
+                Writer.PrintDives(diveManagement.DiveList.AsEnumerable());
 
                 Console.ReadLine();
             }

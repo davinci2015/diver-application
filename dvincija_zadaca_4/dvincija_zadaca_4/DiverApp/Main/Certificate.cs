@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dvincija_zadaca_4.DiverApp.Helpers.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,10 @@ namespace dvincija_zadaca_4.DiverApp.Main
     public class Certificate
     {
         string authorizedFederation { get; set; }
-        string name { get; set; }
         string level { get; set; }
-        int depth { get; set; }
-        public int Depth { get { return depth; } }
+        public int depth { get; private set; }
+        public string name { get; private set; }
+        public int AbsoluteLevel { get { return (int)Enum.Parse(typeof(CertificateAbsoluteLevel), level); } }
 
         /// <summary>
         /// Certificate constructor

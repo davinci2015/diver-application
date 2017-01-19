@@ -50,7 +50,9 @@
     <Compile Include="DiverApp\ChainOfResponsibility\IFilterChain.cs" />
     <Compile Include="DiverApp\Flyweight\CertificateFlyweightFactory.cs" />
     <Compile Include="DiverApp\Helpers\CertificateHelper.cs" />
+    <Compile Include="DiverApp\Helpers\Enums\CertificateAbsoluteLevel.cs" />
     <Compile Include="DiverApp\Helpers\Reader.cs" />
+    <Compile Include="DiverApp\Helpers\Writer.cs" />
     <Compile Include="DiverApp\Helpers\Validation.cs" />
     <Compile Include="DiverApp\Main\Certificate.cs" />
     <Compile Include="DiverApp\Main\Dive.cs" />

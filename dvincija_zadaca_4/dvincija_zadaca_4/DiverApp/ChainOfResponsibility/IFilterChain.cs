@@ -10,6 +10,6 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility
     public interface IFilterChain
     {
         IFilterChain NextChain { set; }
-        void FilterDivers(List<Diver> divers);
+        void FilterDivers(List<Diver> divers, int numOfDiversToRemove);
     }
 }

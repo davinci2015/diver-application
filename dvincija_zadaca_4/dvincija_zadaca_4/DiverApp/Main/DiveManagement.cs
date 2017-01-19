@@ -1,6 +1,7 @@
 ﻿using dvincija_zadaca_4.DiverApp.ChainOfResponsibility;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,12 +18,17 @@ namespace dvincija_zadaca_4.DiverApp.Main
         static readonly string nightDive    = "Noćno ronjenje";
 
         int numOfUnderwaterPhotographers = 0;
+        public List<Dive> DiveList { get { return diveList; } }
 
         public DiveManagement(List<Diver> diverList)
         {
             this.diverList = diverList;
         }
 
+        /// <summary>
+        /// Parse dives and add them to list
+        /// </summary>
+        /// <param name="divesRaw">Array of strings. Each row represents row in file</param>
         public void AddDivesToList(string[] divesRaw)
         {
             string[] dive;
@@ -30,15 +36,21 @@ namespace dvincija_zadaca_4.DiverApp.Main
             foreach (string d in divesRaw)
             {
                 dive = d.Split(';');
-            
+
                 // Create instance of dive class
-                Dive diveObj = new Dive(DateTime.Parse(dive[0]), dive[1], Int32.Parse(dive[2]), Int32.Parse(dive[3]), Int32.Parse(dive[4]), dive[5] == "1", Int32.Parse(dive[6]));
+                string date = dive[0] + " " + dive[1];
+                DateTime diveDateTime = DateTime.ParseExact(date, "yyyy.MM.dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None);
+                Dive diveObj = new Dive(diveDateTime, Int32.Parse(dive[2]), Int32.Parse(dive[3]), Int32.Parse(dive[4]), dive[5] == "1", Int32.Parse(dive[6]));
 
                 // Add dive to list
                 diveList.Add(diveObj);
             }
         }
 
+        /// <summary>
+        /// Filter and assign divers to dives 
+        /// depending on dive conditions
+        /// </summary>
         public void AssignDiversToDive()
         {
             foreach (Dive dive in diveList)
@@ -54,6 +66,11 @@ namespace dvincija_zadaca_4.DiverApp.Main
                     filterChain.FilterDivers(dive.Divers, numOfDiversToRemove);
                 }
 
+                // Else if there is no enough divers for dive
+                else
+                {
+                    // DO SOMETHING ABOUT THAT;
+                }
             }
         }
 
@@ -70,7 +87,7 @@ namespace dvincija_zadaca_4.DiverApp.Main
             foreach (Diver diver in diverList.ToArray())
             {
                 // Filter by depth, dry suit and night dive specialty
-                if ((diver.certificate.Depth + 10 < dive.depth) ||
+                if ((diver.certificate.depth + 10 < dive.depth) ||
                      (dive.temperature < 15 && !diver.CheckIfDiverHasSuperPower(drySuit)) ||
                      (dive.isNightDive && !diver.CheckIfDiverHasSuperPower(nightDive)))    
                     continue;

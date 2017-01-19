@@ -8,9 +8,8 @@ namespace dvincija_zadaca_4.DiverApp.Main
 {
     public class Dive
     {
-        DateTime date { get; set; }
-        string time { get; set; }
         int numOfPhotographers { get; set; }
+        public DateTime dateTime { get; private set; }
         public int numOfDiversNeeded { get; private set; }
         public int depth { get; private set; }
         public int temperature { get; private set; }
@@ -20,10 +19,9 @@ namespace dvincija_zadaca_4.DiverApp.Main
         public int NumOfDivers { get { return divers.Count(); } }
         public List<Diver> Divers { get { return divers; } }
 
-        public Dive(DateTime date, string time, int depth, int numOfDiversNeeded, int temperature, bool isNightDive, int numOfPhotographers)
+        public Dive(DateTime dateTime, int depth, int numOfDiversNeeded, int temperature, bool isNightDive, int numOfPhotographers)
         {
-            this.date = date;
-            this.time = time;
+            this.dateTime = dateTime;
             this.depth = depth;
             this.numOfDiversNeeded = numOfDiversNeeded;
             this.temperature = temperature;

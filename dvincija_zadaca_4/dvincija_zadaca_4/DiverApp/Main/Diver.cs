@@ -43,6 +43,10 @@ namespace dvincija_zadaca_4.DiverApp.Main
             diveList.Add(dive);
         }
 
+        public void RemoveDiveFromList(Dive dive)
+        {
+            diveList.Remove(dive);
+        }
         
         public bool CheckIfDiverHasSuperPower(string superPower)
         {
