@@ -31,7 +31,7 @@ namespace dvincija_zadaca_4.DiverApp.Main
                 dive = d.Split(';');
             
                 // Create instance of dive class
-                Dive diveObj = new Dive(dive[0], dive[1], Int32.Parse(dive[2]), Int32.Parse(dive[3]), Int32.Parse(dive[4]), dive[5] == "1", Int32.Parse(dive[6]));
+                Dive diveObj = new Dive(DateTime.Parse(dive[0]), dive[1], Int32.Parse(dive[2]), Int32.Parse(dive[3]), Int32.Parse(dive[4]), dive[5] == "1", Int32.Parse(dive[6]));
 
                 // Add dive to list
                 diveList.Add(diveObj);
