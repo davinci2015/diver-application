@@ -1,4 +1,5 @@
-﻿using dvincija_zadaca_4.DiverApp.Main;
+﻿using dvincija_zadaca_4.DiverApp.Composite;
+using dvincija_zadaca_4.DiverApp.Main;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,16 +32,35 @@ namespace dvincija_zadaca_4.DiverApp.Helpers
             {
                 diverCounter = 1;
                 builder.AppendFormat("\n\n###### URON ######\n");
-                builder.AppendFormat("Datum: \t\t{0}\nVrijeme: \t{1}\nTemperatura: \t{2}°C\nBroj ronioca: \t{3}/{4}\n\n", dive.dateTime.ToString("dd.MM.yyyy"), dive.dateTime.ToString("HH:MM"), dive.temperature, dive.NumOfDivers, dive.numOfDiversNeeded);
+                builder.AppendFormat("Datum: \t\t{0}\nVrijeme: \t{1}\nTemperatura: \t{2}°C\nBroj ronioca: \t{3}/{4}\n", dive.dateTime.ToString("dd.MM.yyyy"), dive.dateTime.ToString("HH:MM"), dive.temperature, dive.NumOfDivers, dive.numOfDiversNeeded);
+                builder.AppendFormat("Noćni uron: \t{0}\nFotografi: \t{1}\n\n", dive.isNightDive ? "Da" : "Ne", dive.numOfPhotographers);
 
-                builder.AppendFormat("{0,-4}{1,-16}{2,-20}{3}\n", "#", "IME RONIOCA", "DATUM ROĐENJA", "CERTIFIKAT");
-                builder.AppendFormat("{0,-4}{1,-16}{2,-20}{3}\n", "--", "-----------", "-------------", "----------");
+                builder.AppendFormat("{0,-4}{1,-16}{2,-17}{3}\n", "#", "IME RONIOCA", "DATUM ROĐENJA", "CERTIFIKAT");
+                builder.AppendFormat("{0,-4}{1,-16}{2,-17}{3}\n", "--", "-----------", "-------------", "----------");
 
                 foreach (Diver diver in dive.Divers)
-                    builder.AppendFormat("{0,-4}{1,-16}{2,-20}{3}\n", diverCounter++, diver.name, diver.birthDate, diver.certificate.name);
+                    builder.AppendFormat("{0,-4}{1,-16}{2,-17}{3}\n", diverCounter++, diver.name, diver.birthDate, diver.certificate.name);
             }
 
             //AppendTextToFile(outputFilePath, builder.ToString());
+            Console.WriteLine(builder.ToString());
+        }
+
+
+        public static void PrintDiverEquipmentStatusForDives(IEnumerable<Dive> dives)
+        {
+            StringBuilder builder = new StringBuilder();
+
+            foreach (Diver diver in dives.First().Divers)
+            {
+                builder.AppendFormat("{0} - {1}\n", diver.name, diver.equipmentStatus);
+                foreach (ConcreteEquipment equipment in diver.EquipmentList)
+                {
+                    builder.AppendFormat("{0} Zalihe: {1}\n", equipment.name, equipment.stock);
+                }
+                builder.AppendFormat("\n\n");
+            }
+
             Console.WriteLine(builder.ToString());
         }
 
@@ -63,9 +83,9 @@ namespace dvincija_zadaca_4.DiverApp.Helpers
         }
 
 
-        private static void AppendTextToFile(string path, String content)
+        private static void AppendTextToFile(String content)
         {
-            File.AppendAllText(path, content);
+            File.AppendAllText(outputFilePath, content);
         }
 
         public static void CreateFile(string fileName)

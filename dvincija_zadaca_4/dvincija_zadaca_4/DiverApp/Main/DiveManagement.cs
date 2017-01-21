@@ -1,4 +1,5 @@
 ﻿using dvincija_zadaca_4.DiverApp.ChainOfResponsibility;
+using dvincija_zadaca_4.DiverApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -10,14 +11,9 @@ namespace dvincija_zadaca_4.DiverApp.Main
 {
     public class DiveManagement
     {
-        List<Dive> diveList = new List<Dive>();
-        List<Diver> diverList = new List<Diver>();
-    
-        static readonly string drySuit      = "Suho odijelo";
-        static readonly string photographer = "Podvodni fotograf";
-        static readonly string nightDive    = "Noćno ronjenje";
-
-        int numOfUnderwaterPhotographers = 0;
+        private List<Dive> diveList = new List<Dive>();
+        private List<Diver> diverList;
+        private int numOfUnderwaterPhotographers = 0;
         public List<Dive> DiveList { get { return diveList; } }
 
         public DiveManagement(List<Diver> diverList)
@@ -65,12 +61,6 @@ namespace dvincija_zadaca_4.DiverApp.Main
                     DiverFilterChain filterChain = new DiverFilterChain();
                     filterChain.FilterDivers(dive.Divers, numOfDiversToRemove);
                 }
-
-                // Else if there is no enough divers for dive
-                else
-                {
-                    // DO SOMETHING ABOUT THAT;
-                }
             }
         }
 
@@ -88,17 +78,22 @@ namespace dvincija_zadaca_4.DiverApp.Main
             {
                 // Filter by depth, dry suit and night dive specialty
                 if ((diver.certificate.depth + 10 < dive.depth) ||
-                     (dive.temperature < 15 && !diver.CheckIfDiverHasSuperPower(drySuit)) ||
-                     (dive.isNightDive && !diver.CheckIfDiverHasSuperPower(nightDive)))    
+                     (dive.temperature < 15 && !diver.CheckIfDiverHasSuperPower(Constants.DRY_SUIT)) ||
+                     (dive.isNightDive && !diver.CheckIfDiverHasSuperPower(Constants.NIGHT_DIVE)))    
                     continue;
                 
                 // Count how many divers has photography specialty
-                if (diver.CheckIfDiverHasSuperPower(photographer))
+                if (diver.CheckIfDiverHasSuperPower(Constants.PHOTOGRAPHER))
                     numOfUnderwaterPhotographers++;
 
                 dive.AddDiver(diver);
                 diver.AddDiveToList(dive);
             }
+        }
+
+        public void EquipDiversForDive(EquipmentManagement equipmentManagement)
+        {
+            equipmentManagement.AssignEquipmentToDivers(diveList.First());
         }
     }
 }

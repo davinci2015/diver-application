@@ -25,6 +25,12 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility
             filterThird.NextChain  = filterFirst;
         }
 
+
+        /// <summary>
+        /// Pass list of divers through filter chain
+        /// </summary>
+        /// <param name="diverList">List of divers for filtering</param>
+        /// <param name="numOfDiversToRemove">Number of divers to remove</param>
         public void FilterDivers(List<Diver> diverList, int numOfDiversToRemove)
         {
             filterFirst.FilterDivers(diverList, numOfDiversToRemove);

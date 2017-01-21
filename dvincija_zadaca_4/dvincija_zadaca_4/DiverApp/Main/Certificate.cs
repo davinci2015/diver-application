@@ -9,8 +9,8 @@ namespace dvincija_zadaca_4.DiverApp.Main
 {
     public class Certificate
     {
-        string authorizedFederation { get; set; }
-        string level { get; set; }
+        private string authorizedFederation { get; set; }
+        private string level { get; set; }
         public int depth { get; private set; }
         public string name { get; private set; }
         public int AbsoluteLevel { get { return (int)Enum.Parse(typeof(CertificateAbsoluteLevel), level); } }

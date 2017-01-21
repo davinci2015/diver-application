@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dvincija_zadaca_4.DiverApp.Helpers;
 using dvincija_zadaca_4.DiverApp.Flyweight;
+using dvincija_zadaca_4.DiverApp.Composite;
 
 namespace dvincija_zadaca_4.DiverApp.Main
 {
@@ -13,9 +14,9 @@ namespace dvincija_zadaca_4.DiverApp.Main
         public List<Diver> diversList = new List<Diver>();
         
         /// <summary>
-        /// Method for adding divers to divers list
+        /// Add all divers to list of divers
         /// </summary>
-        /// <param name="diversRaw">Contains file content. Every file line is one array element</param>
+        /// <param name="diversRaw">File content. Every file line is one array element</param>
         public void AddDiversToList(string[] diversRaw, string[] superPowerRaw)
         {
             string[] diver;
@@ -39,7 +40,7 @@ namespace dvincija_zadaca_4.DiverApp.Main
                 birthDate       = diver[3];
 
                 // Validate data
-                if (!Validation.ValidateFederationName(federationName) || !Validation.ValidateDiverLevel(level))
+                if (diver.Count() != 4 || !Validation.ValidateFederationName(federationName) || !Validation.ValidateDiverLevel(level))
                     continue;
 
                 // Create new certificate
@@ -59,6 +60,12 @@ namespace dvincija_zadaca_4.DiverApp.Main
             }
         }
 
+        /// <summary>
+        /// Check if diver has superpower
+        /// </summary>
+        /// <param name="superPowerRaw">File content. Every file line is one array element</param>
+        /// <param name="diverName">Diver name</param>
+        /// <returns></returns>
         private List<string> CheckForDiversSuperPower(string[] superPowerRaw, string diverName)
         {
             string[] superpower;

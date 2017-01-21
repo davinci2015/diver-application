@@ -48,9 +48,15 @@
     <Compile Include="DiverApp\ChainOfResponsibility\Filters\DiveNumberFilter.cs" />
     <Compile Include="DiverApp\ChainOfResponsibility\Filters\OldestDiveFilter.cs" />
     <Compile Include="DiverApp\ChainOfResponsibility\IFilterChain.cs" />
+    <Compile Include="DiverApp\Composite\CompositeEquipment.cs" />
+    <Compile Include="DiverApp\Composite\ConcreteEquipment.cs" />
+    <Compile Include="DiverApp\Composite\IEquipment.cs" />
     <Compile Include="DiverApp\Flyweight\CertificateFlyweightFactory.cs" />
     <Compile Include="DiverApp\Helpers\CertificateHelper.cs" />
+    <Compile Include="DiverApp\Helpers\Config.cs" />
+    <Compile Include="DiverApp\Helpers\Constants.cs" />
     <Compile Include="DiverApp\Helpers\Enums\CertificateAbsoluteLevel.cs" />
+    <Compile Include="DiverApp\Helpers\EquipmentHelper.cs" />
     <Compile Include="DiverApp\Helpers\Reader.cs" />
     <Compile Include="DiverApp\Helpers\Writer.cs" />
     <Compile Include="DiverApp\Helpers\Validation.cs" />
@@ -59,6 +65,7 @@
     <Compile Include="DiverApp\Main\DiveManagement.cs" />
     <Compile Include="DiverApp\Main\Diver.cs" />
     <Compile Include="DiverApp\Main\DiversManagement.cs" />
+    <Compile Include="DiverApp\Main\EquipmentManagement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

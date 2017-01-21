@@ -8,7 +8,7 @@ namespace dvincija_zadaca_4.DiverApp.Main
 {
     public class Dive
     {
-        int numOfPhotographers { get; set; }
+        public int numOfPhotographers { get; private set; }
         public DateTime dateTime { get; private set; }
         public int numOfDiversNeeded { get; private set; }
         public int depth { get; private set; }

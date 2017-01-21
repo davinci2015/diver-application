@@ -2,7 +2,7 @@
 0.1;Maska;#;#;#;#;#;20
 0.2;Disalica;#;#;#;#;#;20
 0.3;Peraje;#;#;#;#;#;20
-1;Sustav zaštitnog ronilaèkog odijela 
+1;Sustav zaštitnog ronilaèkog odijela
 1.1;Zaštitno odijelo
 1.1.1;Mokro odijelo
 1.1.1.1;Mokro kratko odijelo debljine 3mm;25;-;#;#;#;2
@@ -12,7 +12,7 @@
 1.1.2;Polu suho odijelo
 1.1.2.1;Polu suho odijelo;10;-;#;#;#;2
 1.1.3;Suho odijelo
-1.1.3.1;;Suho odijelo neopren
+1.1.3.1;Suho odijelo neopren
 1.1.3.1.1;Suho odijelo neopren debljine 3mm;20;-;+;#;#;2
 1.1.3.1.2;Suho odijelo neopren debljine 5mm;18;-;+;#;#;7
 1.1.3.1.3;Suho odijelo neopren debljine 7mm;15;-;+;#;#;3

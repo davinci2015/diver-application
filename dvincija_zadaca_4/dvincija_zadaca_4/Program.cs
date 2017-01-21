@@ -24,6 +24,10 @@ namespace dvincija_zadaca_4
                 string fileEquipmentPath = args[4];
                 int maxLoanDays = Int32.Parse(args[5]);
 
+                // Set config
+                Config.Random = new Random(seed);
+                Config.MaxLoanDays = maxLoanDays;
+
                 // Read files
                 string[] diversRaw      = Reader.ReadFile(filePathDivers);
                 string[] dives          = Reader.ReadFile(filePathDives);
@@ -39,8 +43,16 @@ namespace dvincija_zadaca_4
                 diveManagement.AddDivesToList(dives);
                 diveManagement.AssignDiversToDive();
 
+                // Set Equipment
+                EquipmentManagement equipmentManagement = new EquipmentManagement();
+                equipmentManagement.LoadEquipment(equipmentRaw);
+
+                // Equip divers for every dive
+                diveManagement.EquipDiversForDive(equipmentManagement);
+
                 // Print
                 Writer.PrintDives(diveManagement.DiveList.AsEnumerable());
+                Writer.PrintDiverEquipmentStatusForDives(diveManagement.DiveList.AsEnumerable());
 
                 Console.ReadLine();
             }

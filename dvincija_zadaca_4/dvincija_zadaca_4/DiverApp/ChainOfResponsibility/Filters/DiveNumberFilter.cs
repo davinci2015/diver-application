@@ -20,7 +20,6 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility.Filters
         /// <param name="numOfDiversToRemove">Number of divers to delete</param>
         public void FilterDivers(List<Diver> divers, int numOfDiversToRemove)
         {
-
             // Find maximum number of dives per diver
             int max = divers.Max(x => x.NumOfDives);
 

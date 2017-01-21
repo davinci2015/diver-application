@@ -13,7 +13,8 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility.Filters
         public IFilterChain NextChain { set { nextFilter = value; } }
 
         /// <summary>
-        /// Remove divers with recent dive date and keep ones with oldest dive date
+        /// Remove divers with most recent dive date 
+        /// and keep those with oldest dive date
         /// </summary>
         /// <param name="divers">List of divers</param>
         /// <param name="numOfDiversToRemove">Number of divers to remove</param>
