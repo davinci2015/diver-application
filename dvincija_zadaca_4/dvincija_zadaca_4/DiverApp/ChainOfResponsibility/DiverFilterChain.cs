@@ -10,7 +10,7 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility
 {
     public class DiverFilterChain
     {
-        IFilterChain filterFirst;
+        private IFilterChain filterFirst;
         public DiverFilterChain()
         {
             // Init the chain

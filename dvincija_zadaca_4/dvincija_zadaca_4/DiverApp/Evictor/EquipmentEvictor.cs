@@ -32,8 +32,8 @@ namespace dvincija_zadaca_4.DiverApp.Evictor
                     {
                         // Calculate return date
                         DateTime returnDate = diveDate >= diver.EquipmentList[i].loanDate.AddDays(diver.EquipmentList[i].maxLoanDays) ?
-                                                                diver.EquipmentList[i].loanDate.AddDays(diver.EquipmentList[i].maxLoanDays) :
-                                                                diveDate;
+                                                          diver.EquipmentList[i].loanDate.AddDays(diver.EquipmentList[i].maxLoanDays) :
+                                                          diveDate;
                         // Return equipment to storage
                         diver.EquipmentList[i].ReturnEquipment();
 
