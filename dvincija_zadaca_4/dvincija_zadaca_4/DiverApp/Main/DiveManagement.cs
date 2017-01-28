@@ -1,4 +1,6 @@
 ﻿using dvincija_zadaca_4.DiverApp.ChainOfResponsibility;
+using dvincija_zadaca_4.DiverApp.Composite;
+using dvincija_zadaca_4.DiverApp.Evictor;
 using dvincija_zadaca_4.DiverApp.Helpers;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,7 @@ namespace dvincija_zadaca_4.DiverApp.Main
         private List<Dive> diveList = new List<Dive>();
         private List<Diver> diverList;
         private int numOfUnderwaterPhotographers = 0;
+        private EquipmentEvictor equipmentEvictor = new EquipmentEvictor();
         public List<Dive> DiveList { get { return diveList; } }
 
         public DiveManagement(List<Diver> diverList)
@@ -93,7 +96,22 @@ namespace dvincija_zadaca_4.DiverApp.Main
 
         public void EquipDiversForDive(EquipmentManagement equipmentManagement)
         {
-            equipmentManagement.AssignEquipmentToDivers(diveList.First());
+           foreach (Dive dive in diveList)
+           {
+                // Return equipment
+                equipmentEvictor.ReturnEquipment(dive, diverList);
+
+                // If there is enough divers for dive then equip them
+                if (dive.NumOfDivers == dive.numOfDiversNeeded)
+                    equipmentManagement.AssignEquipmentToDivers(dive);
+
+                // Print each diver equipment in current dive
+                Writer.PrintEquipmentPerDiverInDive(dive);
+
+                // Print warehouse stock status
+                Writer.PrintWarehouseStatusHeading();
+                equipmentManagement.PrintWarehouseStatus();
+            }
         }
     }
 }

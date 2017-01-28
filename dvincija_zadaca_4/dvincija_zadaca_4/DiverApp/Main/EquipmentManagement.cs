@@ -9,12 +9,11 @@ namespace dvincija_zadaca_4.DiverApp.Main
 {
     public class EquipmentManagement
     {
-        CompositeEquipment allEquipment = new CompositeEquipment("0", "Equipment");
+        private CompositeEquipment allEquipment = new CompositeEquipment("0", "Equipment");
         public CompositeEquipment AllEquipment { get { return allEquipment; } }
 
         /// <summary>
-        /// Load equipment categories 
-        /// and concrete equipment into composite
+        /// Load equipment categories and concrete equipment into composite
         /// </summary>
         /// <param name="equipmentRaw">Array of strings. Each row represents row in file</param>
         public void LoadEquipment(string[] equipmentRaw)
@@ -64,8 +63,16 @@ namespace dvincija_zadaca_4.DiverApp.Main
             foreach (Diver diver in dive.Divers)
             {
                 allEquipment.EquipDiver(diver, dive);
-                diver.UpdateEquipmentStatus();
+                diver.UpdateEquipmentStatus(dive);
             }
+        }
+
+        /// <summary>
+        /// Print all equipment and their status
+        /// </summary>
+        public void PrintWarehouseStatus()
+        {
+            allEquipment.PrintComponentStatus();
         }
     }
 }

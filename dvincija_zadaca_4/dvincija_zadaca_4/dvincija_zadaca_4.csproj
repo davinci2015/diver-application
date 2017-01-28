@@ -51,6 +51,9 @@
     <Compile Include="DiverApp\Composite\CompositeEquipment.cs" />
     <Compile Include="DiverApp\Composite\ConcreteEquipment.cs" />
     <Compile Include="DiverApp\Composite\IEquipment.cs" />
+    <Compile Include="DiverApp\Evictor\EquipmentEvictionStrategy.cs" />
+    <Compile Include="DiverApp\Evictor\EquipmentEvictor.cs" />
+    <Compile Include="DiverApp\Evictor\IEquipmentEvictor.cs" />
     <Compile Include="DiverApp\Flyweight\CertificateFlyweightFactory.cs" />
     <Compile Include="DiverApp\Helpers\CertificateHelper.cs" />
     <Compile Include="DiverApp\Helpers\Config.cs" />

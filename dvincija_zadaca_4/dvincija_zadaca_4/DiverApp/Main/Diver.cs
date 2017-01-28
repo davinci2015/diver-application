@@ -49,20 +49,10 @@ namespace dvincija_zadaca_4.DiverApp.Main
         {
             diveList.Add(dive);
         }
-
-        public void RemoveDiveFromList(Dive diveToRemove)
-        {
-            diveList.Remove(diveToRemove);
-        }
         
         public bool CheckIfDiverHasSuperPower(string superPower)
         {
             return superPowers.Contains(superPower);
-        }
-
-        public void ChangeEquipmentAssociationType()
-        {
-            basicEquipmentAssociation = !basicEquipmentAssociation;
         }
 
         public void AddEquipment(ConcreteEquipment item)
@@ -72,33 +62,31 @@ namespace dvincija_zadaca_4.DiverApp.Main
 
         public bool CheckExistingEquipmentByCategory(string equipmentID)
         {
-            bool found = false;
-
-            foreach (ConcreteEquipment eq in equipmentList)
-                if (eq.ID.Remove(eq.ID.Length - 2) == equipmentID.Remove(equipmentID.Length - 2) && equipmentID[0] != '0')
-                    found = true;
-
-            return found;
+            return equipmentList.Any(x => x.ID.Remove(x.ID.Length - 2) == equipmentID.Remove(equipmentID.Length - 2) && equipmentID[0] != '0');
         }
 
-        public bool CheckIfDiverHaveDrySuit()
+        public bool CheckIfDiverHaveEquipment(ConcreteEquipment equipment)
         {
-            bool found = false;
+            return equipmentList.Contains(equipment);
+        }
 
-            foreach (ConcreteEquipment eq in equipmentList)
-                if (eq.name.Contains(Constants.DRY_SUIT))
-                    found = true;
+        public bool CheckIfDiverNeedUndersuit()
+        {
+            return equipmentList.Any(x => x.needUndersuit == Constants.NEED_OTHER_EQUIPMENT);
+        }
 
-            return found;
+        public bool CheckIfDiverNeedHood()
+        {
+            return equipmentList.Any(x => x.needHood == Constants.NEED_OTHER_EQUIPMENT);
         }
 
         /// <summary>
         /// Update diver equipment status
-        /// FULLY EQUIPED       - basic equipment + additional equipment
+        /// FULLY EQUIPED       - basic equipment + all additional equipment
         /// PARTIALLY EQUIPED   - basic equipment
-        /// NOT EQUIPED         - without full basic equipment
+        /// NOT EQUIPED         - without basic equipment
         /// </summary>
-        public void UpdateEquipmentStatus()
+        public void UpdateEquipmentStatus(Dive dive)
         {
             int basicEquipmentCounter = 0;
 
@@ -108,15 +96,27 @@ namespace dvincija_zadaca_4.DiverApp.Main
                     basicEquipmentCounter++;
 
             // Basic equipment
-            if (basicEquipmentCounter == Constants.NUM_OF_BASIC_EQUIPMENT)
+            if (basicEquipmentCounter == Constants.NUM_OF_BASIC_EQUIPMENT && equipmentList.Count() == Constants.NUM_OF_BASIC_EQUIPMENT)
                 equipmentStatus = Constants.PARTIALLY_EQUIPED;
 
-            // Basic + additional equipment
-            if (equipmentList.Count() > Constants.NUM_OF_BASIC_EQUIPMENT && basicEquipmentCounter == Constants.NUM_OF_BASIC_EQUIPMENT)
-                equipmentStatus = Constants.FULLY_EQUIPED;
-
             // Diver is not adequate equiped for dive
-            else equipmentStatus = Constants.NOT_EQUIPED;
+            else if (basicEquipmentCounter < Constants.NUM_OF_BASIC_EQUIPMENT)
+                equipmentStatus = Constants.NOT_EQUIPED;
+
+            // Basic + additional equipment
+            else if (
+                // If it's cold dive then check if diver is adequate equipped for cold dive
+                (dive.temperature < Constants.TEMPERATURE_BOUNDARY && EquipmentHelper.IsDiverAdequatEquippedForColdDive(equipmentList)) ||
+
+                // If it's dive with temp above 15 and diver is adequate equipped for that dive
+                (dive.temperature >= Constants.TEMPERATURE_BOUNDARY && EquipmentHelper.IsDiverAdequateEquippedForWarmDive(equipmentList)) &&
+
+                // If it's night dive then check if diver is adequate equipped for night dive
+                ((dive.isNightDive && EquipmentHelper.IsDiverAdequateEquippedForNightDive(EquipmentList)) || !dive.isNightDive)
+                )
+            {
+                equipmentStatus = Constants.FULLY_EQUIPED;
+            }
         }
     }
 }

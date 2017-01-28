@@ -9,7 +9,7 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility.Filters
 {
     public class CertificateFilter : IFilterChain
     {
-        IFilterChain nextFilter;
+        private IFilterChain nextFilter;
         public IFilterChain NextChain { set { nextFilter = value; } }
 
         /// <summary>

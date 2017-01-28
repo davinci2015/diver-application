@@ -13,11 +13,12 @@ namespace dvincija_zadaca_4.DiverApp.Composite
         public string ID { get; private set; }
         public string name { get; private set; }
         string temperature { get; set; }
-        string needHood { get; set; }
-        string needUndersuit { get; set; }
+        public string needHood { get; private set; }
+        public string needUndersuit { get; private set; }
         string needForNightDive { get; set; }
         string needForRecording { get; set; }
         public int stock { get; private set; }
+        public int originalStock { get; private set; }
         public DateTime loanDate { get; private set; }
         public int maxLoanDays { get; private set; }
 
@@ -31,6 +32,7 @@ namespace dvincija_zadaca_4.DiverApp.Composite
             this.needHood = needHood;
             this.needUndersuit = needUndersuit;
             this.stock = stock;
+            this.originalStock = stock;
         }
 
         public IEquipment AddComponent(IEquipment equipment)
@@ -49,23 +51,45 @@ namespace dvincija_zadaca_4.DiverApp.Composite
         }
 
         /// <summary>
+        /// When diver returns equipment update stock value
+        /// </summary>
+        public void ReturnEquipment()
+        {
+            stock++;
+        }
+
+        /// <summary>
         /// Lend equipment to diver
         /// </summary>
         /// <param name="dive"></param>
         /// <param name="diver"></param>
         private void LendEquipment(Dive dive, Diver diver)
         {
-            // Add equipment to diver
-            diver.AddEquipment(this);
+            // If diver already have this equipment then just extend loan date
+            if (diver.CheckIfDiverHaveEquipment(this))
+                SetLoanDate(dive);
 
+            // Else if equipment is available and diver does not have equipment from that category
+            else if (IsEquipmentAvailable() && !diver.CheckExistingEquipmentByCategory(ID) && !diver.CheckIfDiverHaveEquipment(this) )
+            {
+                // Add equipment to diver
+                diver.AddEquipment(this);
+
+                // Set loan date
+                SetLoanDate(dive);
+
+                // Reduce stock
+                stock--;
+            }
+        }
+
+        private void SetLoanDate(Dive dive)
+        {
             // Set loan date to dive date
             loanDate = dive.dateTime;
 
             // Set max loan days
             maxLoanDays = Config.Random.Next(1, Config.MaxLoanDays);
-
-            // Reduce stock
-            stock--;
         }
 
         /// <summary>
@@ -77,66 +101,42 @@ namespace dvincija_zadaca_4.DiverApp.Composite
         public void EquipDiver(Diver diver, Dive dive)
         {
             // Equip with basic equipment
-            if (EquipmentHelper.IsBasicEquipment(this) &&       // Check if it is basic equipment
-                IsEquipmentAvailable() &&                       // Is equipment available
-                !diver.CheckExistingEquipmentByCategory(ID)     // Check if diver already have similar equipment
-                )
-            {
+            if (EquipmentHelper.IsBasicEquipment(this))
                 LendEquipment(dive, diver);
-            }
 
-            // Equip with dry suits
-            else if (dive.temperature < 15 &&                   // Check if it's cold     
-                IsEquipmentAvailable() &&                       // Is equipment available
-                !diver.CheckExistingEquipmentByCategory(ID) &&  // Check if diver already have similar equipment
-                EquipmentHelper.IsDrySuit(this) &&              // Check if it is dry suit
-                !diver.CheckIfDiverHaveDrySuit()
-                )                        
-            {
+            // Equip with dry suit
+            else if (dive.temperature < Constants.TEMPERATURE_BOUNDARY && EquipmentHelper.IsDrySuit(this) && !diver.CheckIfDiverNeedUndersuit())                        
                 LendEquipment(dive, diver);
-            }
-
+            
             // Equip with undersuit
-            else if (EquipmentHelper.IsUndersuit(this) &&
-                diver.CheckIfDiverHaveDrySuit() &&
-                !diver.CheckExistingEquipmentByCategory(ID) && 
-                IsEquipmentAvailable()
-                )
-            {
+            else if (EquipmentHelper.IsUndersuit(this) && diver.CheckIfDiverNeedUndersuit())
                 LendEquipment(dive, diver);
-            }
 
-            // Equip with wet suits
-            else if (dive.temperature >= 15 &&
-                EquipmentHelper.IsWetSuit(this) &&
-                IsEquipmentAvailable() &&
-                !diver.CheckExistingEquipmentByCategory(ID)
-                )
-            {
+            // Equip with wet suit
+            else if (dive.temperature >= Constants.TEMPERATURE_BOUNDARY && EquipmentHelper.IsWetSuit(this))
                 LendEquipment(dive, diver);
-            }
+            
+            // Equip with hood if needed
+            else if (dive.temperature >= 15 && EquipmentHelper.IsHood(this) && diver.CheckIfDiverNeedHood())
+                LendEquipment(dive, diver);
 
             // Equip with equipment for night dive
-            else if (dive.isNightDive &&
-                needForNightDive == Constants.EQUIPMENT_NEEDED &&
-                diver.CheckIfDiverHasSuperPower(Constants.NIGHT_DIVE) &&
-                IsEquipmentAvailable() &&
-                !diver.CheckExistingEquipmentByCategory(ID)
-                )
-            {
+            else if (dive.isNightDive && needForNightDive == Constants.EQUIPMENT_NEEDED && diver.CheckIfDiverHasSuperPower(Constants.NIGHT_DIVE))
                 LendEquipment(dive, diver);
-            }
 
             // Equip with equipment for photographers
-            else if (dive.numOfPhotographers > 0 &&
-                diver.CheckIfDiverHasSuperPower(Constants.PHOTOGRAPHER) &&
-                needForRecording == Constants.EQUIPMENT_NEEDED &&
-                !diver.CheckExistingEquipmentByCategory(ID) &&
-                IsEquipmentAvailable()
-                )
-            {
+            else if (dive.numOfPhotographers > 0 && diver.CheckIfDiverHasSuperPower(Constants.PHOTOGRAPHER) && needForRecording == Constants.EQUIPMENT_NEEDED)
                 LendEquipment(dive, diver);
-            }
+            
+            // Additional equipment
+            else if (EquipmentHelper.IsAdditionalEquipment(this) && temperature != "#" && dive.temperature < 20 ||
+                     EquipmentHelper.IsAdditionalEquipment(this) && temperature == "#")
+                LendEquipment(dive, diver);
+        }
+
+        public void PrintComponentStatus()
+        {
+            Writer.PrintEquipment(this);
         }
     }
 }

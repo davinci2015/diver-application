@@ -9,7 +9,7 @@ namespace dvincija_zadaca_4.DiverApp.ChainOfResponsibility.Filters
 {
     public class DiveNumberFilter : IFilterChain
     {
-        IFilterChain nextFilter;
+        private IFilterChain nextFilter;
         public IFilterChain NextChain { set { nextFilter = value; } }
 
         /// <summary>

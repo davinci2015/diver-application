@@ -47,12 +47,11 @@ namespace dvincija_zadaca_4
                 EquipmentManagement equipmentManagement = new EquipmentManagement();
                 equipmentManagement.LoadEquipment(equipmentRaw);
 
-                // Equip divers for every dive
-                diveManagement.EquipDiversForDive(equipmentManagement);
-
                 // Print
                 Writer.PrintDives(diveManagement.DiveList.AsEnumerable());
-                Writer.PrintDiverEquipmentStatusForDives(diveManagement.DiveList.AsEnumerable());
+
+                // Equip divers for every dive
+                diveManagement.EquipDiversForDive(equipmentManagement);
 
                 Console.ReadLine();
             }

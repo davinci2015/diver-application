@@ -11,5 +11,6 @@ namespace dvincija_zadaca_4.DiverApp.Composite
     {
         IEquipment AddComponent(IEquipment equipment);
         void EquipDiver(Diver diver, Dive dive);
+        void PrintComponentStatus();
     }
 }
